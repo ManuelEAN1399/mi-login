@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/>
@@ -6,10 +6,6 @@
 <title>PREVISORA SEGUROS — Plataforma de Inducción 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 <style>
-/* ═══════════════════════════════════════════════════
-   PREVISORA DESIGN SYSTEM
-   Paleta exacta de la imagen de brand guidelines
-═══════════════════════════════════════════════════ */
 :root {
   --purple:      #592272;
   --purple-mid:  #9B4CBA;
@@ -20,7 +16,6 @@
   --green:       #61B22F;
   --green-dk:    #2C421F;
   --olive:       #2C421F;
- 
   --bg:          #0e0c14;
   --bg2:         #17131f;
   --bg3:         #201b2c;
@@ -28,289 +23,126 @@
   --surface2:    #2e2641;
   --border:      rgba(155,76,186,0.18);
   --border2:     rgba(255,255,255,0.06);
- 
   --txt:         #f0ecf8;
   --txt2:        #b8aed0;
   --txt3:        #7a6e96;
- 
   --r:           12px;
   --r-lg:        18px;
   --r-xl:        24px;
   --sh:          0 4px 24px rgba(89,34,114,0.22);
   --sh-lg:       0 12px 48px rgba(89,34,114,0.32);
 }
- 
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
- 
-body{
-  font-family:'Sora',sans-serif;
-  background:var(--bg);
-  color:var(--txt);
-  font-size:14px;
-  line-height:1.6;
-  min-height:100vh;
-  overflow-x:hidden;
-}
- 
+body{font-family:'Sora',sans-serif;background:var(--bg);color:var(--txt);font-size:14px;line-height:1.6;min-height:100vh;overflow-x:hidden;}
 ::-webkit-scrollbar{width:5px;}
 ::-webkit-scrollbar-track{background:var(--bg2);}
 ::-webkit-scrollbar-thumb{background:var(--purple);border-radius:3px;}
- 
-/* ═══ UTILITY ═══════════════════════════════════════ */
 .hidden{display:none!important;}
 .fade-in{animation:fadeUp .35s ease both;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
 @keyframes spin{to{transform:rotate(360deg)}}
-@keyframes shimmer{0%{background-position:-400px 0}100%{background-position:400px 0}}
 @keyframes popIn{0%{transform:scale(.8);opacity:0}70%{transform:scale(1.05)}100%{transform:scale(1);opacity:1}}
+@keyframes slideRight{from{width:0}to{width:100%}}
  
-/* ═══ LOGIN SCREEN ══════════════════════════════════ */
-#screen-login{
-  display:flex;min-height:100vh;
-  background:linear-gradient(135deg,#0e0c14 0%,#17101f 50%,#0a1208 100%);
-  position:relative;overflow:hidden;
-}
-#screen-login::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 60% 60% at 20% 50%,rgba(89,34,114,.35) 0%,transparent 70%),
-             radial-gradient(ellipse 40% 50% at 80% 30%,rgba(196,211,29,.12) 0%,transparent 70%),
-             radial-gradient(ellipse 30% 40% at 70% 80%,rgba(251,2,141,.10) 0%,transparent 70%);
-  pointer-events:none;
-}
- 
-.login-grid{
-  display:grid;grid-template-columns:1fr 480px;
-  width:100%;position:relative;z-index:1;
-}
- 
-/* LEFT HERO */
-.login-hero{
-  display:flex;flex-direction:column;justify-content:center;
-  padding:4rem 3.5rem 0;position:relative;overflow:hidden;
-}
+/* LOGIN */
+#screen-login{display:flex;min-height:100vh;background:linear-gradient(135deg,#0e0c14 0%,#17101f 50%,#0a1208 100%);position:relative;overflow:hidden;}
+#screen-login::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 60% at 20% 50%,rgba(89,34,114,.35) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 80% 30%,rgba(196,211,29,.12) 0%,transparent 70%),radial-gradient(ellipse 30% 40% at 70% 80%,rgba(251,2,141,.10) 0%,transparent 70%);pointer-events:none;}
+.login-grid{display:grid;grid-template-columns:1fr 480px;width:100%;position:relative;z-index:1;}
+.login-hero{display:flex;flex-direction:column;justify-content:center;padding:4rem 3.5rem 0;position:relative;overflow:hidden;}
 .login-logo-area{margin-bottom:2rem;display:flex;align-items:center;gap:14px;}
 .logo-spiral{width:48px;height:48px;}
-.logo-text-block{}
 .logo-brand{font-size:26px;font-weight:800;color:#fff;letter-spacing:.02em;line-height:1;}
 .logo-seg{font-size:10px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--lime);margin-top:1px;}
 .logo-tagline{font-size:13px;color:var(--orchid);font-style:italic;margin-top:2px;}
- 
-.hero-headline{
-  font-size:clamp(28px,3.5vw,46px);font-weight:800;
-  line-height:1.12;letter-spacing:-.02em;
-  color:#fff;margin-bottom:1.25rem;
-}
+.hero-headline{font-size:clamp(28px,3.5vw,46px);font-weight:800;line-height:1.12;letter-spacing:-.02em;color:#fff;margin-bottom:1.25rem;}
 .hero-headline .hl-lime{color:var(--lime);}
 .hero-headline .hl-pink{color:var(--hot-pink);}
- 
 .hero-sub{font-size:15px;color:var(--txt2);max-width:400px;line-height:1.75;margin-bottom:2.5rem;}
- 
 .hero-features{display:flex;flex-direction:column;gap:10px;margin-bottom:2.5rem;}
-.hero-feat{
-  display:flex;align-items:center;gap:12px;
-  padding:10px 14px;
-  background:rgba(255,255,255,.04);
-  border:1px solid var(--border2);
-  border-radius:var(--r);
-  font-size:13px;color:var(--txt2);
-  transition:border-color .2s,background .2s;
-}
+.hero-feat{display:flex;align-items:center;gap:12px;padding:10px 14px;background:rgba(255,255,255,.04);border:1px solid var(--border2);border-radius:var(--r);font-size:13px;color:var(--txt2);transition:border-color .2s,background .2s;}
 .hero-feat:hover{border-color:var(--border);background:rgba(155,76,186,.08);}
 .feat-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
 .fd-lime{background:var(--lime);}
 .fd-pink{background:var(--hot-pink);}
 .fd-purple{background:var(--purple-mid);}
 .fd-green{background:var(--green);}
- 
-/* Characters on login */
-.login-chars{
-  position:absolute;bottom:0;right:-20px;
-  display:flex;align-items:flex-end;
-  gap:-10px;
-}
+.login-chars{position:absolute;bottom:0;right:-20px;display:flex;align-items:flex-end;}
 .login-char{width:180px;filter:drop-shadow(0 -4px 24px rgba(89,34,114,.4));}
 .login-char:nth-child(2){width:160px;margin-left:-20px;}
 .login-char:nth-child(3){width:175px;margin-left:-25px;}
- 
-/* RIGHT PANEL */
-.login-panel{
-  background:var(--surface);
-  border-left:1px solid var(--border);
-  display:flex;flex-direction:column;justify-content:center;
-  padding:3rem 2.5rem;
-  position:relative;overflow:hidden;
-}
-.login-panel::before{
-  content:'';position:absolute;top:-80px;right:-80px;
-  width:280px;height:280px;border-radius:50%;
-  background:radial-gradient(circle,rgba(196,211,29,.08) 0%,transparent 70%);
-}
+.login-panel{background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;justify-content:center;padding:3rem 2.5rem;position:relative;overflow:hidden;}
+.login-panel::before{content:'';position:absolute;top:-80px;right:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(196,211,29,.08) 0%,transparent 70%);}
 .panel-header{margin-bottom:2rem;}
 .panel-title{font-size:22px;font-weight:700;color:var(--txt);margin-bottom:4px;}
 .panel-sub{font-size:13px;color:var(--txt3);}
- 
-/* Role selector */
 .role-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1.5rem;}
-.role-tab{
-  display:flex;align-items:center;gap:8px;
-  padding:10px 14px;border-radius:var(--r);
-  border:1.5px solid var(--border2);
-  background:var(--bg3);
-  cursor:pointer;transition:all .18s;
-}
+.role-tab{display:flex;align-items:center;gap:8px;padding:10px 14px;border-radius:var(--r);border:1.5px solid var(--border2);background:var(--bg3);cursor:pointer;transition:all .18s;}
 .role-tab:hover{border-color:var(--orchid);background:rgba(155,76,186,.08);}
 .role-tab.active{border-color:var(--purple-mid);background:rgba(89,34,114,.25);}
 .rt-icon{font-size:20px;}
 .rt-label{font-size:12px;font-weight:600;color:var(--txt2);}
 .rt-sub{font-size:10px;color:var(--txt3);}
- 
-/* Form */
 .field{margin-bottom:1rem;}
-.field-lbl{
-  display:block;font-size:11px;font-weight:600;
-  color:var(--txt3);letter-spacing:.08em;text-transform:uppercase;
-  margin-bottom:6px;
-}
-.field input,.field select{
-  width:100%;padding:11px 14px;
-  background:var(--bg3);
-  border:1.5px solid var(--border2);
-  border-radius:var(--r);
-  font-family:'Sora',sans-serif;font-size:13px;
-  color:var(--txt);outline:none;
-  transition:border-color .18s;
-}
+.field-lbl{display:block;font-size:11px;font-weight:600;color:var(--txt3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.field input,.field select{width:100%;padding:11px 14px;background:var(--bg3);border:1.5px solid var(--border2);border-radius:var(--r);font-family:'Sora',sans-serif;font-size:13px;color:var(--txt);outline:none;transition:border-color .18s;}
 .field input:focus,.field select:focus{border-color:var(--purple-mid);}
 .field input.input-error{border-color:var(--hot-pink);}
 .field select option{background:var(--bg2);}
  
-.check-row{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem;cursor:pointer;}
-.check-box{
-  width:16px;height:16px;border-radius:4px;
-  border:1.5px solid var(--border);
-  background:var(--bg3);flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:10px;
-}
-.check-lbl{font-size:12px;color:var(--txt3);}
+/* ── REMEMBER HINT (nuevo) ── */
+.field-hint{display:flex;align-items:center;gap:5px;margin-top:5px;font-size:10px;color:var(--lime);font-weight:600;animation:fadeUp .3s ease both;font-family:'DM Mono',monospace;}
+.field-hint svg{flex-shrink:0;}
  
-.btn-login{
-  width:100%;padding:13px;
-  background:linear-gradient(135deg,var(--purple),var(--purple-mid));
-  border:none;border-radius:var(--r);
-  font-family:'Sora',sans-serif;font-size:14px;font-weight:700;
-  color:#fff;cursor:pointer;letter-spacing:.03em;
-  box-shadow:0 4px 20px rgba(89,34,114,.5);
-  transition:opacity .18s,transform .12s;
-}
+.check-row{display:flex;align-items:center;gap:8px;margin-bottom:1.25rem;cursor:pointer;user-select:none;}
+.check-box{width:16px;height:16px;border-radius:4px;border:1.5px solid var(--border);background:var(--bg3);flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;transition:background .15s,border-color .15s;}
+.check-box.checked{background:var(--purple-mid);border-color:var(--purple-mid);color:#fff;}
+.check-lbl{font-size:12px;color:var(--txt3);}
+.check-sublbl{font-size:10px;color:var(--txt3);opacity:.7;margin-left:auto;font-family:'DM Mono',monospace;}
+ 
+.btn-login{width:100%;padding:13px;background:linear-gradient(135deg,var(--purple),var(--purple-mid));border:none;border-radius:var(--r);font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:#fff;cursor:pointer;letter-spacing:.03em;box-shadow:0 4px 20px rgba(89,34,114,.5);transition:opacity .18s,transform .12s;}
 .btn-login:hover{opacity:.9;transform:translateY(-1px);}
 .btn-login:active{transform:translateY(0);}
- 
 .demo-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.25rem;}
-.demo-chip{
-  font-size:10px;padding:4px 9px;border-radius:20px;
-  border:1px solid var(--border);color:var(--txt3);
-  font-family:'DM Mono',monospace;
-}
+.demo-chip{font-size:10px;padding:4px 9px;border-radius:20px;border:1px solid var(--border);color:var(--txt3);font-family:'DM Mono',monospace;}
+.err-msg{background:rgba(251,2,141,.12);border:1px solid rgba(251,2,141,.3);border-radius:var(--r);padding:8px 12px;font-size:12px;color:var(--hot-pink);margin-bottom:12px;}
  
-/* Error msg */
-.err-msg{
-  background:rgba(251,2,141,.12);border:1px solid rgba(251,2,141,.3);
-  border-radius:var(--r);padding:8px 12px;
-  font-size:12px;color:var(--hot-pink);margin-bottom:12px;
-}
+/* ── SECURITY NOTE (nuevo) ── */
+.security-note{display:flex;align-items:flex-start;gap:7px;padding:8px 10px;background:rgba(196,211,29,.05);border:1px solid rgba(196,211,29,.12);border-radius:8px;margin-top:10px;font-size:10px;color:var(--txt3);line-height:1.5;}
+.security-note svg{flex-shrink:0;margin-top:1px;opacity:.7;}
  
-/* ═══ APP WRAPPER ══════════════════════════════════ */
+/* APP */
 #screen-app{display:none;flex-direction:column;min-height:100vh;}
- 
-/* TOPBAR */
-.topbar{
-  height:58px;
-  background:var(--surface);
-  border-bottom:1px solid var(--border);
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 1.5rem;position:sticky;top:0;z-index:200;
-  box-shadow:0 2px 16px rgba(0,0,0,.4);
-}
+.topbar{height:58px;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 1.5rem;position:sticky;top:0;z-index:200;box-shadow:0 2px 16px rgba(0,0,0,.4);}
 .topbar-left{display:flex;align-items:center;gap:14px;}
 .topbar-logo{display:flex;align-items:center;gap:10px;}
 .topbar-brand{font-size:15px;font-weight:800;color:#fff;letter-spacing:.04em;}
 .topbar-seg{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--lime);}
 .topbar-div{width:1px;height:28px;background:var(--border2);}
 .topbar-page{font-size:13px;color:var(--txt3);font-weight:500;}
- 
 .topbar-right{display:flex;align-items:center;gap:10px;}
-.user-pill{
-  display:flex;align-items:center;gap:8px;
-  padding:5px 12px 5px 5px;
-  background:var(--bg3);border:1px solid var(--border2);
-  border-radius:30px;cursor:pointer;
-}
-.user-av{
-  width:28px;height:28px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:700;color:#fff;flex-shrink:0;
-}
+.user-pill{display:flex;align-items:center;gap:8px;padding:5px 12px 5px 5px;background:var(--bg3);border:1px solid var(--border2);border-radius:30px;cursor:pointer;}
+.user-av{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#fff;flex-shrink:0;}
 .av-emp{background:linear-gradient(135deg,var(--purple),var(--purple-mid));}
 .av-adm{background:linear-gradient(135deg,var(--hot-pink),#ff69b4);}
 .user-name{font-size:12px;font-weight:600;color:var(--txt2);}
 .user-role-tag{font-size:10px;color:var(--txt3);}
- 
-.btn-logout{
-  padding:6px 12px;border-radius:var(--r);
-  border:1px solid var(--border2);background:transparent;
-  font-family:'Sora',sans-serif;font-size:12px;font-weight:600;
-  color:var(--txt3);cursor:pointer;transition:all .15s;
-}
+.btn-logout{padding:6px 12px;border-radius:var(--r);border:1px solid var(--border2);background:transparent;font-family:'Sora',sans-serif;font-size:12px;font-weight:600;color:var(--txt3);cursor:pointer;transition:all .15s;}
 .btn-logout:hover{border-color:var(--hot-pink);color:var(--hot-pink);}
- 
-/* BODY LAYOUT */
 .app-body{display:flex;flex:1;}
- 
-/* SIDEBAR */
-.sidebar{
-  width:228px;background:var(--bg2);
-  border-right:1px solid var(--border);
-  padding:1.25rem 0;flex-shrink:0;
-  position:sticky;top:58px;height:calc(100vh - 58px);
-  overflow-y:auto;
-}
-.sb-section{
-  font-size:9px;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--txt3);
-  padding:.75rem 1.25rem .3rem;margin-top:.5rem;
-}
+.sidebar{width:228px;background:var(--bg2);border-right:1px solid var(--border);padding:1.25rem 0;flex-shrink:0;position:sticky;top:58px;height:calc(100vh - 58px);overflow-y:auto;}
+.sb-section{font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--txt3);padding:.75rem 1.25rem .3rem;margin-top:.5rem;}
 .sb-section:first-child{margin-top:0;}
-.nav-item{
-  display:flex;align-items:center;gap:10px;
-  padding:9px 1.25rem;font-size:13px;font-weight:500;
-  color:var(--txt3);cursor:pointer;
-  transition:all .15s;
-  border-left:3px solid transparent;
-}
+.nav-item{display:flex;align-items:center;gap:10px;padding:9px 1.25rem;font-size:13px;font-weight:500;color:var(--txt3);cursor:pointer;transition:all .15s;border-left:3px solid transparent;}
 .nav-item:hover{background:rgba(155,76,186,.07);color:var(--txt2);}
-.nav-item.active{
-  background:rgba(89,34,114,.2);color:#fff;
-  border-left-color:var(--lime);font-weight:600;
-}
+.nav-item.active{background:rgba(89,34,114,.2);color:#fff;border-left-color:var(--lime);font-weight:600;}
 .nav-icon{font-size:15px;width:18px;text-align:center;flex-shrink:0;}
-.nav-badge{
-  margin-left:auto;background:var(--hot-pink);color:#fff;
-  font-size:9px;padding:2px 6px;border-radius:10px;font-weight:700;
-  font-family:'DM Mono',monospace;
-}
- 
-/* MAIN */
+.nav-badge{margin-left:auto;background:var(--hot-pink);color:#fff;font-size:9px;padding:2px 6px;border-radius:10px;font-weight:700;font-family:'DM Mono',monospace;}
 .main-area{flex:1;padding:2rem;overflow-y:auto;max-height:calc(100vh - 58px);}
  
-/* ═══ BADGES & CHIPS ═══════════════════════════════ */
-.badge{
-  display:inline-flex;align-items:center;gap:4px;
-  font-size:10px;padding:3px 9px;border-radius:20px;font-weight:700;
-  letter-spacing:.02em;
-}
+/* BADGES */
+.badge{display:inline-flex;align-items:center;gap:4px;font-size:10px;padding:3px 9px;border-radius:20px;font-weight:700;letter-spacing:.02em;}
 .b-lime{background:rgba(196,211,29,.15);color:var(--lime);border:1px solid rgba(196,211,29,.25);}
 .b-purple{background:rgba(89,34,114,.3);color:var(--orchid);border:1px solid rgba(155,76,186,.3);}
 .b-pink{background:rgba(251,2,141,.12);color:var(--hot-pink);border:1px solid rgba(251,2,141,.25);}
@@ -318,38 +150,21 @@ body{
 .b-gray{background:rgba(255,255,255,.06);color:var(--txt3);border:1px solid var(--border2);}
 .b-red{background:rgba(255,50,50,.1);color:#ff7070;border:1px solid rgba(255,50,50,.2);}
  
-/* ═══ CARDS ═════════════════════════════════════════ */
-.card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r-lg);padding:1.25rem;
-  box-shadow:var(--sh);
-}
-.card-flat{
-  background:var(--bg3);border:1px solid var(--border2);
-  border-radius:var(--r);padding:1rem;
-}
+/* CARDS */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.25rem;box-shadow:var(--sh);}
+.card-flat{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:1rem;}
  
-/* ═══ PAGE HEADER ══════════════════════════════════ */
+/* PAGE HEADER */
 .page-hd{margin-bottom:1.75rem;}
-.page-title{
-  font-size:22px;font-weight:800;color:#fff;
-  letter-spacing:-.02em;margin-bottom:3px;
-}
+.page-title{font-size:22px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:3px;}
 .page-sub{font-size:13px;color:var(--txt3);}
  
-/* ═══ STATS ════════════════════════════════════════ */
+/* STATS */
 .stats-row{display:grid;gap:12px;margin-bottom:1.75rem;}
 .stats-4{grid-template-columns:repeat(4,1fr);}
 .stats-3{grid-template-columns:repeat(3,1fr);}
-.stat-card{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r-lg);padding:1.1rem 1.25rem;
-  position:relative;overflow:hidden;
-}
-.stat-card::after{
-  content:'';position:absolute;top:-20px;right:-20px;
-  width:80px;height:80px;border-radius:50%;opacity:.08;
-}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.1rem 1.25rem;position:relative;overflow:hidden;}
+.stat-card::after{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;opacity:.08;}
 .sc-purple::after{background:var(--purple-mid);}
 .sc-lime::after{background:var(--lime);}
 .sc-pink::after{background:var(--hot-pink);}
@@ -362,7 +177,7 @@ body{
 .sv-green{color:var(--green);}
 .stat-sub{font-size:11px;color:var(--txt3);}
  
-/* ═══ PROGRESS ═════════════════════════════════════ */
+/* PROGRESS */
 .prog-wrap{background:rgba(255,255,255,.07);border-radius:6px;overflow:hidden;}
 .prog-fill{height:100%;border-radius:6px;transition:width .6s ease;}
 .pf-purple{background:linear-gradient(90deg,var(--purple),var(--purple-mid));}
@@ -373,103 +188,52 @@ body{
 .h8{height:8px;}
 .h10{height:10px;}
  
-/* ═══ BUTTONS ══════════════════════════════════════ */
-.btn{
-  display:inline-flex;align-items:center;gap:7px;
-  padding:9px 18px;border-radius:var(--r);
-  font-family:'Sora',sans-serif;font-size:13px;font-weight:600;
-  cursor:pointer;transition:all .15s;border:1.5px solid transparent;
-}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:var(--r);font-family:'Sora',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:all .15s;border:1.5px solid transparent;}
 .btn-sm{padding:6px 12px;font-size:12px;}
 .btn-xs{padding:3px 9px;font-size:11px;}
-.btn-primary{
-  background:linear-gradient(135deg,var(--purple),var(--purple-mid));
-  color:#fff;box-shadow:0 4px 14px rgba(89,34,114,.4);
-}
+.btn-primary{background:linear-gradient(135deg,var(--purple),var(--purple-mid));color:#fff;box-shadow:0 4px 14px rgba(89,34,114,.4);}
 .btn-primary:hover{opacity:.88;transform:translateY(-1px);}
 .btn-lime{background:var(--lime);color:var(--bg);font-weight:700;}
 .btn-lime:hover{background:var(--lime-dk);color:#fff;}
 .btn-pink{background:var(--hot-pink);color:#fff;}
 .btn-pink:hover{opacity:.85;}
-.btn-ghost{
-  background:transparent;border-color:var(--border2);color:var(--txt2);
-}
+.btn-ghost{background:transparent;border-color:var(--border2);color:var(--txt2);}
 .btn-ghost:hover{border-color:var(--orchid);color:var(--orchid);}
 .btn-danger{background:rgba(255,50,50,.1);border-color:rgba(255,50,50,.25);color:#ff7070;}
 .btn-danger:hover{background:rgba(255,50,50,.2);}
  
-/* ═══ TABLE ════════════════════════════════════════ */
+/* TABLE */
 .tbl-wrap{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;}
 .data-tbl{width:100%;border-collapse:collapse;}
-.data-tbl th{
-  text-align:left;font-size:9px;font-weight:700;color:var(--txt3);
-  letter-spacing:.1em;text-transform:uppercase;
-  padding:10px 16px;border-bottom:1px solid var(--border2);
-  background:var(--bg3);
-}
-.data-tbl td{
-  padding:12px 16px;font-size:12px;color:var(--txt2);
-  border-bottom:1px solid rgba(255,255,255,.03);
-  vertical-align:middle;
-}
+.data-tbl th{text-align:left;font-size:9px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;padding:10px 16px;border-bottom:1px solid var(--border2);background:var(--bg3);}
+.data-tbl td{padding:12px 16px;font-size:12px;color:var(--txt2);border-bottom:1px solid rgba(255,255,255,.03);vertical-align:middle;}
 .data-tbl tr:last-child td{border-bottom:none;}
 .data-tbl tr:hover td{background:rgba(155,76,186,.05);}
-.emp-av{
-  width:30px;height:30px;border-radius:50%;
-  display:inline-flex;align-items:center;justify-content:center;
-  font-size:11px;font-weight:700;color:#fff;
-  margin-right:8px;vertical-align:middle;flex-shrink:0;
-}
  
-/* ═══ MODULE CARDS ═════════════════════════════════ */
+/* MODULE CARDS */
 .mods-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
-.mod-card{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--r-lg);padding:1.25rem;
-  cursor:pointer;transition:all .18s;
-  position:relative;overflow:hidden;
-}
-.mod-card::before{
-  content:'';position:absolute;top:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--purple),var(--purple-mid));
-  opacity:0;transition:opacity .2s;
-}
-.mod-card:hover:not(.locked-card){
-  border-color:var(--orchid);
-  box-shadow:var(--sh-lg);
-  transform:translateY(-2px);
-}
+.mod-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:1.25rem;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;}
+.mod-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--purple),var(--purple-mid));opacity:0;transition:opacity .2s;}
+.mod-card:hover:not(.locked-card){border-color:var(--orchid);box-shadow:var(--sh-lg);transform:translateY(-2px);}
 .mod-card:hover:not(.locked-card)::before{opacity:1;}
 .mod-card.done-card{border-color:rgba(196,211,29,.35);}
 .mod-card.done-card::before{opacity:1;background:linear-gradient(90deg,var(--lime-dk),var(--lime));}
 .mod-card.locked-card{opacity:.45;cursor:not-allowed;filter:grayscale(.4);}
- 
 .mod-head{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px;}
-.mod-icon-bg{
-  width:46px;height:46px;border-radius:var(--r);
-  background:rgba(89,34,114,.25);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;font-size:20px;
-}
+.mod-icon-bg{width:46px;height:46px;border-radius:var(--r);background:rgba(89,34,114,.25);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:20px;}
 .mod-title{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
 .mod-desc{font-size:12px;color:var(--txt3);line-height:1.6;margin-bottom:12px;}
 .mod-meta{display:flex;align-items:center;justify-content:space-between;margin-top:8px;}
 .mod-dur{font-size:10px;color:var(--txt3);font-family:'DM Mono',monospace;}
 .mod-pct-txt{font-size:12px;font-weight:700;color:var(--lime);}
  
-/* ═══ STEP LIST ════════════════════════════════════ */
+/* STEP LIST */
 .step-list{display:flex;flex-direction:column;gap:12px;}
-.step-card{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--r-lg);padding:1.1rem 1.25rem;
-  display:flex;gap:14px;transition:border-color .18s;
-}
+.step-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:1.1rem 1.25rem;display:flex;gap:14px;transition:border-color .18s;}
 .step-card.done-step{border-color:rgba(196,211,29,.3);}
 .step-card.active-step{border-color:var(--orchid);}
-.sn{
-  width:34px;height:34px;border-radius:50%;
-  display:flex;align-items:center;justify-content:center;
-  font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px;
-}
+.sn{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:2px;}
 .sn-done{background:rgba(196,211,29,.15);color:var(--lime);}
 .sn-active{background:rgba(89,34,114,.3);color:var(--orchid);}
 .sn-idle{background:rgba(255,255,255,.06);color:var(--txt3);}
@@ -478,219 +242,127 @@ body{
 .st-desc{font-size:12px;color:var(--txt2);line-height:1.6;}
 .st-tag{font-size:10px;color:var(--txt3);margin-top:6px;font-family:'DM Mono',monospace;}
  
-/* ═══ WELCOME BANNER ═══════════════════════════════ */
-.welcome-banner{
-  background:linear-gradient(135deg,#1e0d2e 0%,#2a1040 40%,#1a1a0a 100%);
-  border:1px solid var(--border);
-  border-radius:var(--r-xl);padding:1.75rem 2rem;
-  margin-bottom:1.75rem;
-  display:flex;align-items:center;justify-content:space-between;
-  position:relative;overflow:hidden;
-}
-.wb-glow{
-  position:absolute;top:-60px;left:-60px;
-  width:200px;height:200px;border-radius:50%;
-  background:radial-gradient(circle,rgba(89,34,114,.5) 0%,transparent 70%);
-}
-.wb-glow2{
-  position:absolute;bottom:-40px;right:160px;
-  width:150px;height:150px;border-radius:50%;
-  background:radial-gradient(circle,rgba(196,211,29,.15) 0%,transparent 70%);
-}
+/* WELCOME BANNER */
+.welcome-banner{background:linear-gradient(135deg,#1e0d2e 0%,#2a1040 40%,#1a1a0a 100%);border:1px solid var(--border);border-radius:var(--r-xl);padding:1.75rem 2rem;margin-bottom:1.75rem;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden;}
+.wb-glow{position:absolute;top:-60px;left:-60px;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(89,34,114,.5) 0%,transparent 70%);}
+.wb-glow2{position:absolute;bottom:-40px;right:160px;width:150px;height:150px;border-radius:50%;background:radial-gradient(circle,rgba(196,211,29,.15) 0%,transparent 70%);}
 .wb-content{position:relative;z-index:1;}
-.wb-eyebrow{
-  font-size:10px;font-weight:700;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--lime);margin-bottom:8px;
-}
+.wb-eyebrow{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--lime);margin-bottom:8px;}
 .wb-title{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.02em;margin-bottom:4px;}
 .wb-sub{font-size:13px;color:var(--txt2);}
-.wb-day{
-  text-align:right;position:relative;z-index:1;
-}
+.wb-day{text-align:right;position:relative;z-index:1;}
 .wb-num{font-size:52px;font-weight:800;line-height:1;color:var(--lime);letter-spacing:-.04em;}
 .wb-lbl{font-size:11px;color:var(--txt3);font-weight:500;}
- 
-/* ═══ CHAR cards on home ════════════════════════════ */
 .team-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.team-card{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--r-lg);padding:1rem;
-  text-align:center;cursor:pointer;
-  transition:all .18s;position:relative;overflow:hidden;
-}
+.team-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:1rem;text-align:center;cursor:pointer;transition:all .18s;position:relative;overflow:hidden;}
 .team-card:hover{border-color:var(--orchid);transform:translateY(-3px);box-shadow:var(--sh-lg);}
 .team-card-role{font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--txt3);margin-top:8px;}
 .team-card-name{font-size:12px;font-weight:700;color:#fff;margin-top:2px;}
- 
-/* ═══ ACTIVITY FEED ════════════════════════════════ */
 .feed-item{display:flex;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.04);}
 .feed-item:last-child{border-bottom:none;}
 .feed-dot{width:8px;height:8px;border-radius:50%;margin-top:5px;flex-shrink:0;}
 .feed-txt{font-size:12px;color:var(--txt2);line-height:1.5;}
 .feed-time{font-size:10px;color:var(--txt3);margin-top:2px;font-family:'DM Mono',monospace;}
- 
-/* ═══ DOCS GRID ════════════════════════════════════ */
 .docs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
-.doc-card{
-  background:var(--surface);border:1.5px solid var(--border);
-  border-radius:var(--r-lg);padding:1rem;
-  cursor:pointer;transition:all .18s;
-}
+.doc-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--r-lg);padding:1rem;cursor:pointer;transition:all .18s;}
 .doc-card:hover{border-color:var(--orchid);transform:translateY(-2px);}
-.doc-type{
-  font-size:9px;font-weight:700;letter-spacing:.08em;
-  text-transform:uppercase;font-family:'DM Mono',monospace;
-  padding:2px 7px;border-radius:5px;display:inline-block;margin-bottom:8px;
-}
+.doc-type{font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-family:'DM Mono',monospace;padding:2px 7px;border-radius:5px;display:inline-block;margin-bottom:8px;}
 .dt-pdf{background:rgba(255,80,80,.12);color:#ff7070;}
 .dt-vid{background:rgba(89,34,114,.25);color:var(--orchid);}
 .dt-lnk{background:rgba(196,211,29,.12);color:var(--lime);}
 .doc-title{font-size:12px;font-weight:600;color:#fff;margin-bottom:4px;line-height:1.4;}
 .doc-meta{font-size:10px;color:var(--txt3);}
  
-/* ═══ QUIZ MODAL ══════════════════════════════════ */
-.modal-bd{
-  display:none;position:fixed;inset:0;
-  background:rgba(0,0,0,.75);backdrop-filter:blur(4px);
-  z-index:500;align-items:center;justify-content:center;
-}
+/* ═══ QUIZ MODAL — MEJORADO ════════════════════════ */
+.modal-bd{display:none;position:fixed;inset:0;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);z-index:500;align-items:center;justify-content:center;}
 .modal-bd.open{display:flex;}
-.modal-box{
-  background:var(--surface2);border:1px solid var(--border);
-  border-radius:var(--r-xl);padding:2rem;
-  width:520px;max-width:95vw;
-  box-shadow:0 24px 80px rgba(0,0,0,.6);
-  animation:popIn .25s ease;
-}
-.modal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;}
+.modal-box{background:var(--surface2);border:1px solid var(--border);border-radius:var(--r-xl);padding:2rem;width:580px;max-width:95vw;box-shadow:0 24px 80px rgba(0,0,0,.6);animation:popIn .25s ease;}
+.modal-box.quiz-modal-box{width:660px;max-height:90vh;display:flex;flex-direction:column;}
+.modal-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.5rem;flex-shrink:0;}
 .modal-title{font-size:17px;font-weight:800;color:#fff;}
-.modal-close{
-  width:30px;height:30px;border-radius:8px;
-  background:rgba(255,255,255,.06);border:none;
-  color:var(--txt3);cursor:pointer;font-size:14px;
-  transition:all .15s;
-}
+.modal-close{width:30px;height:30px;border-radius:8px;background:rgba(255,255,255,.06);border:none;color:var(--txt3);cursor:pointer;font-size:14px;transition:all .15s;}
 .modal-close:hover{background:rgba(251,2,141,.2);color:var(--hot-pink);}
  
-.quiz-q{
-  font-size:14px;font-weight:600;color:#fff;
-  padding:14px 16px;
-  background:rgba(89,34,114,.2);border:1px solid var(--border);
-  border-left:4px solid var(--purple-mid);
-  border-radius:var(--r);margin-bottom:1.25rem;
-  line-height:1.6;
-}
+/* Quiz progress bar */
+.quiz-progress-bar{background:rgba(255,255,255,.07);border-radius:6px;height:6px;margin-bottom:1.25rem;overflow:hidden;flex-shrink:0;}
+.quiz-progress-fill{height:100%;border-radius:6px;background:linear-gradient(90deg,var(--purple),var(--lime));transition:width .4s ease;}
+ 
+/* Quiz header meta */
+.quiz-meta-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:1.25rem;flex-shrink:0;}
+.quiz-counter{font-size:12px;font-weight:700;color:var(--orchid);font-family:'DM Mono',monospace;}
+.quiz-timer-badge{display:flex;align-items:center;gap:6px;padding:4px 12px;border-radius:20px;background:rgba(89,34,114,.25);border:1px solid var(--border);font-size:12px;font-weight:700;color:var(--txt2);font-family:'DM Mono',monospace;}
+.quiz-timer-badge.warning{color:var(--hot-pink);border-color:rgba(251,2,141,.3);background:rgba(251,2,141,.1);animation:pulse 1s infinite;}
+.quiz-score-live{font-size:12px;font-weight:700;color:var(--lime);}
+ 
+/* Quiz scrollable body */
+.quiz-scroll{overflow-y:auto;flex:1;padding-right:4px;}
+.quiz-scroll::-webkit-scrollbar{width:3px;}
+.quiz-scroll::-webkit-scrollbar-thumb{background:var(--purple);}
+ 
+.quiz-q{font-size:14px;font-weight:600;color:#fff;padding:14px 16px;background:rgba(89,34,114,.2);border:1px solid var(--border);border-left:4px solid var(--purple-mid);border-radius:var(--r);margin-bottom:1.25rem;line-height:1.6;}
 .quiz-opts{display:flex;flex-direction:column;gap:8px;margin-bottom:1.25rem;}
-.quiz-opt{
-  display:flex;align-items:center;gap:12px;
-  padding:11px 14px;border:1.5px solid var(--border2);
-  border-radius:var(--r);cursor:pointer;
-  transition:all .15s;font-size:13px;color:var(--txt2);
-  background:var(--bg3);
-}
+.quiz-opt{display:flex;align-items:center;gap:12px;padding:11px 14px;border:1.5px solid var(--border2);border-radius:var(--r);cursor:pointer;transition:all .15s;font-size:13px;color:var(--txt2);background:var(--bg3);}
 .quiz-opt:hover:not(.qo-locked){border-color:var(--orchid);background:rgba(89,34,114,.12);color:#fff;}
 .quiz-opt.qo-sel{border-color:var(--purple-mid);background:rgba(89,34,114,.22);color:#fff;}
 .quiz-opt.qo-correct{border-color:var(--lime);background:rgba(196,211,29,.1);color:var(--lime);}
 .quiz-opt.qo-wrong{border-color:var(--hot-pink);background:rgba(251,2,141,.1);color:var(--hot-pink);}
 .quiz-opt.qo-locked{cursor:not-allowed;}
-.qo-circle{
-  width:18px;height:18px;border-radius:50%;flex-shrink:0;
-  border:2px solid var(--border);transition:all .15s;
-}
-.quiz-opt.qo-sel .qo-circle{border-color:var(--purple-mid);background:var(--purple-mid);}
-.quiz-opt.qo-correct .qo-circle{border-color:var(--lime);background:var(--lime);}
-.quiz-opt.qo-wrong .qo-circle{border-color:var(--hot-pink);background:var(--hot-pink);}
+.qo-letter{width:26px;height:26px;border-radius:50%;background:rgba(255,255,255,.06);border:1.5px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;font-family:'DM Mono',monospace;transition:all .15s;}
+.quiz-opt.qo-sel .qo-letter{background:var(--purple-mid);border-color:var(--purple-mid);color:#fff;}
+.quiz-opt.qo-correct .qo-letter{background:var(--lime);border-color:var(--lime);color:var(--bg);}
+.quiz-opt.qo-wrong .qo-letter{background:var(--hot-pink);border-color:var(--hot-pink);color:#fff;}
  
-.quiz-result{
-  padding:10px 14px;border-radius:var(--r);
-  font-size:13px;font-weight:600;margin-bottom:1rem;
-  display:none;
-}
-.qr-ok{background:rgba(196,211,29,.1);border:1px solid rgba(196,211,29,.25);color:var(--lime);}
-.qr-fail{background:rgba(251,2,141,.1);border:1px solid rgba(251,2,141,.25);color:var(--hot-pink);}
+/* Feedback pill */
+.quiz-feedback{display:none;align-items:center;gap:8px;padding:10px 14px;border-radius:var(--r);font-size:12px;font-weight:600;margin-bottom:1rem;}
+.qf-ok{background:rgba(196,211,29,.1);border:1px solid rgba(196,211,29,.25);color:var(--lime);}
+.qf-fail{background:rgba(251,2,141,.1);border:1px solid rgba(251,2,141,.25);color:var(--hot-pink);}
+.quiz-feedback.visible{display:flex;}
  
-.modal-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:1rem;}
+/* Final result panel */
+.quiz-final{display:none;text-align:center;padding:1.5rem 1rem;}
+.quiz-final.visible{display:block;}
+.qf-score-ring{width:110px;height:110px;margin:0 auto 1rem;position:relative;}
+.qf-score-label{font-size:30px;font-weight:800;color:#fff;position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;line-height:1;}
+.qf-score-sub{font-size:11px;color:var(--txt3);font-weight:500;}
+.qf-result-title{font-size:18px;font-weight:800;margin-bottom:8px;}
+.qf-result-sub{font-size:13px;color:var(--txt2);margin-bottom:1.5rem;}
+.qf-breakdown{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1.25rem;}
+.qf-break-item{background:var(--bg3);border:1px solid var(--border2);border-radius:var(--r);padding:10px;text-align:center;}
+.qf-break-val{font-size:20px;font-weight:800;line-height:1;margin-bottom:3px;}
+.qf-break-lbl{font-size:10px;color:var(--txt3);}
  
-/* ═══ NOTIFICATION ═════════════════════════════════ */
-#notif{
-  position:fixed;bottom:1.5rem;right:1.5rem;
-  background:var(--surface2);border:1px solid var(--orchid);
-  border-radius:var(--r);padding:12px 18px;
-  font-size:13px;font-weight:600;color:#fff;
-  opacity:0;transform:translateY(8px);
-  transition:opacity .25s,transform .25s;
-  pointer-events:none;z-index:999;max-width:320px;
-  box-shadow:0 8px 32px rgba(89,34,114,.5);
-}
+/* Modal footer */
+.modal-footer{display:flex;gap:8px;justify-content:flex-end;margin-top:1rem;flex-shrink:0;}
+ 
+/* Notification */
+#notif{position:fixed;bottom:1.5rem;right:1.5rem;background:var(--surface2);border:1px solid var(--orchid);border-radius:var(--r);padding:12px 18px;font-size:13px;font-weight:600;color:#fff;opacity:0;transform:translateY(8px);transition:opacity .25s,transform .25s;pointer-events:none;z-index:999;max-width:320px;box-shadow:0 8px 32px rgba(89,34,114,.5);}
 #notif.show{opacity:1;transform:translateY(0);}
  
-/* ═══ PROGRESS RING ════════════════════════════════ */
+/* Ring SVG */
 .ring-svg{transform:rotate(-90deg);}
 .ring-bg{fill:none;stroke:rgba(255,255,255,.07);stroke-width:6;}
 .ring-fg{fill:none;stroke:var(--lime);stroke-width:6;stroke-linecap:round;transition:stroke-dashoffset .7s ease;}
  
-/* ═══ COURSE SIDEBAR (module view) ════════════════ */
-.course-layout{display:grid;grid-template-columns:280px 1fr;gap:20px;}
-.course-nav{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;}
-.cn-header{padding:1rem 1.25rem;border-bottom:1px solid var(--border2);font-size:12px;font-weight:700;color:var(--txt2);letter-spacing:.06em;text-transform:uppercase;}
 .cn-section{padding:8px 1.25rem;font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-top:.5rem;}
-.cn-item{
-  display:flex;align-items:center;gap:10px;
-  padding:8px 1.25rem;font-size:12px;color:var(--txt3);
-  cursor:pointer;transition:all .12s;
-  border-left:2px solid transparent;
-}
+.cn-item{display:flex;align-items:center;gap:10px;padding:8px 1.25rem;font-size:12px;color:var(--txt3);cursor:pointer;transition:all .12s;border-left:2px solid transparent;}
 .cn-item:hover{background:rgba(155,76,186,.07);color:var(--txt2);}
 .cn-item.cn-done{color:var(--lime);}
-.cn-item.cn-done .cn-icon{color:var(--lime);}
 .cn-icon{font-size:13px;width:16px;text-align:center;}
 .cn-count{margin-left:auto;font-size:9px;font-family:'DM Mono',monospace;color:var(--txt3);}
- 
-.course-content-area{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:1.5rem;}
-.course-success{
-  background:rgba(196,211,29,.08);border:1px solid rgba(196,211,29,.2);
-  border-radius:var(--r);padding:10px 14px;
-  font-size:12px;color:var(--lime);margin-bottom:1.25rem;
-  display:flex;align-items:center;gap:8px;
-}
- 
-/* ═══ QUIZ INFO BOX ════════════════════════════════ */
-.quiz-info-row{display:flex;gap:20px;margin-bottom:1.5rem;flex-wrap:wrap;}
+.course-success{background:rgba(196,211,29,.08);border:1px solid rgba(196,211,29,.2);border-radius:var(--r);padding:10px 14px;font-size:12px;color:var(--lime);margin-bottom:1.25rem;display:flex;align-items:center;gap:8px;}
 .qi-item{display:flex;align-items:center;gap:8px;font-size:12px;color:var(--txt3);}
 .qi-icon{font-size:14px;}
+.quiz-info-row{display:flex;gap:20px;margin-bottom:1.5rem;flex-wrap:wrap;}
  
-/* ═══ SCORE DISPLAY ════════════════════════════════ */
-.score-circle{
-  width:90px;height:90px;
-  background:linear-gradient(135deg,rgba(89,34,114,.3),rgba(155,76,186,.2));
-  border:2px solid var(--orchid);border-radius:50%;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  font-weight:800;color:var(--lime);font-size:22px;line-height:1;
-}
-.score-sub{font-size:10px;color:var(--txt3);font-weight:500;}
- 
-/* ═══ CERT CARD ════════════════════════════════════ */
-.cert-card{
-  background:linear-gradient(135deg,#1a0d26,#0e1a06);
-  border:2px solid rgba(196,211,29,.4);
-  border-radius:var(--r-xl);padding:2rem;
-  text-align:center;position:relative;overflow:hidden;
-}
-.cert-card::before{
-  content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse at 50% 0%,rgba(196,211,29,.08) 0%,transparent 60%);
-}
+/* Cert card */
+.cert-card{background:linear-gradient(135deg,#1a0d26,#0e1a06);border:2px solid rgba(196,211,29,.4);border-radius:var(--r-xl);padding:2rem;text-align:center;position:relative;overflow:hidden;}
+.cert-card::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(196,211,29,.08) 0%,transparent 60%);}
 </style>
 </head>
 <body>
  
-<!-- ══════════════════════════════════════════════════
-     INLINE SVG DEFS — Illustrated Characters
-══════════════════════════════════════════════════ -->
 <svg width="0" height="0" style="position:absolute;overflow:hidden">
 <defs>
- 
-<!-- ─── ASISTENTE ADMINISTRATIVA ─────────────────── -->
 <g id="c-asist">
   <ellipse cx="60" cy="215" rx="32" ry="5" fill="rgba(0,0,0,.3)"/>
   <rect x="42" y="168" width="15" height="42" rx="6" fill="#1a1020"/>
@@ -716,7 +388,7 @@ body{
   <path d="M36 68 Q28 80 32 96" stroke="#3d1f0a" stroke-width="10" fill="none"/>
   <ellipse cx="60" cy="32" rx="14" ry="10" fill="#3d1f0a"/>
   <ellipse cx="34" cy="80" rx="4" ry="5" fill="#c8a078"/>
-  <circle cx="34" cy="86" r="3" fill="#d4a012" stroke="#d4a012" stroke-width="1"/>
+  <circle cx="34" cy="86" r="3" fill="#d4a012"/>
   <ellipse cx="86" cy="80" rx="4" ry="5" fill="#c8a078"/>
   <circle cx="86" cy="86" r="3" fill="#d4a012"/>
   <ellipse cx="50" cy="72" rx="6" ry="6.5" fill="#fff"/>
@@ -734,8 +406,6 @@ body{
   <path d="M48 86 Q60 96 72 86" stroke="#3d1f0a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
   <ellipse cx="60" cy="82" rx="3" ry="2" fill="rgba(160,80,40,.2)"/>
 </g>
- 
-<!-- ─── COORDINADOR ADMINISTRATIVO ───────────────── -->
 <g id="c-coord">
   <ellipse cx="60" cy="215" rx="32" ry="5" fill="rgba(0,0,0,.3)"/>
   <rect x="44" y="170" width="14" height="40" rx="6" fill="#2a2050"/>
@@ -779,8 +449,6 @@ body{
   <ellipse cx="38" cy="80" rx="6" ry="3.5" fill="rgba(220,120,100,.12)"/>
   <ellipse cx="82" cy="80" rx="6" ry="3.5" fill="rgba(220,120,100,.12)"/>
 </g>
- 
-<!-- ─── AUXILIAR DE INSPECCIÓN ────────────────────── -->
 <g id="c-insp">
   <ellipse cx="60" cy="215" rx="32" ry="5" fill="rgba(0,0,0,.3)"/>
   <rect x="44" y="170" width="14" height="40" rx="6" fill="#1a2030"/>
@@ -820,8 +488,6 @@ body{
   <circle cx="24" cy="152" r="6" fill="none" stroke="#7a4e2a" stroke-width="2"/>
   <line x1="28" y1="148" x2="34" y2="142" stroke="#7a4e2a" stroke-width="2.5" stroke-linecap="round"/>
 </g>
- 
-<!-- ─── CONDUCTOR ──────────────────────────────────── -->
 <g id="c-cond">
   <ellipse cx="60" cy="215" rx="32" ry="5" fill="rgba(0,0,0,.3)"/>
   <rect x="44" y="170" width="14" height="40" rx="6" fill="#222"/>
@@ -848,8 +514,6 @@ body{
   <ellipse cx="84" cy="72" rx="4.5" ry="5.5" fill="#f5d5a0"/>
   <circle cx="49" cy="70" r="7" fill="none" stroke="#222" stroke-width="2.5"/>
   <circle cx="69" cy="70" r="7" fill="none" stroke="#222" stroke-width="2.5"/>
-  <circle cx="49" cy="70" r="7" fill="rgba(200,230,255,.06)"/>
-  <circle cx="69" cy="70" r="7" fill="rgba(200,230,255,.06)"/>
   <line x1="56" y1="70" x2="62" y2="70" stroke="#222" stroke-width="2.5"/>
   <line x1="32" y1="70" x2="42" y2="70" stroke="#222" stroke-width="2"/>
   <line x1="76" y1="70" x2="86" y2="70" stroke="#222" stroke-width="2"/>
@@ -863,17 +527,12 @@ body{
   <ellipse cx="82" cy="78" rx="6" ry="3" fill="rgba(220,120,100,.12)"/>
   <path d="M51 83 Q60 91 69 83" stroke="#8b4513" stroke-width="2.5" fill="none" stroke-linecap="round"/>
 </g>
- 
 </defs>
 </svg>
  
-<!-- ══════════════════════════════════════════════════
-     SCREEN: LOGIN
-══════════════════════════════════════════════════ -->
+<!-- LOGIN -->
 <div id="screen-login">
   <div class="login-grid">
- 
-    <!-- LEFT HERO -->
     <div class="login-hero">
       <div class="login-logo-area">
         <svg class="logo-spiral" viewBox="0 0 48 48" fill="none">
@@ -881,26 +540,20 @@ body{
           <path d="M24 5 C36 5 43 12 43 23 C43 32 36 38 27 38 C20 38 15 33 15 26 C15 21 18 17 23 17 C26 17 29 20 29 23" stroke="#C4D31D" stroke-width="2.5" fill="none" stroke-linecap="round"/>
           <circle cx="29" cy="23" r="3" fill="#C4D31D"/>
         </svg>
-        <div class="logo-text-block">
+        <div>
           <div class="logo-brand">PREVISORA</div>
           <div class="logo-seg">SEGUROS</div>
           <div class="logo-tagline">No prometemos, aseguramos</div>
         </div>
       </div>
- 
-      <h1 class="hero-headline">
-        Inducción<br/><br/><span class="hl-lime">2026</span>
-      </h1>
+      <h1 class="hero-headline">Inducción<br/><br/><span class="hl-lime">2026</span></h1>
       <p class="hero-sub">Bienvenido/a a nuestra plataforma. Aquí conocerás nuestra historia, valores y cómo trabajamos en equipo para crecer juntos.</p>
- 
       <div class="hero-features">
         <div class="hero-feat"><div class="feat-dot fd-lime"></div>Rutas de aprendizaje por cargo</div>
         <div class="hero-feat"><div class="feat-dot fd-purple"></div>Módulos con evaluaciones integradas</div>
         <div class="hero-feat"><div class="feat-dot fd-pink"></div>Panel de administrador con métricas</div>
         <div class="hero-feat"><div class="feat-dot fd-green"></div>Certificado de incorporación al aprobar</div>
       </div>
- 
-      <!-- 3 Characters -->
       <div class="login-chars">
         <svg class="login-char" viewBox="0 0 120 220"><use href="#c-asist"/></svg>
         <svg class="login-char" viewBox="0 0 120 220"><use href="#c-coord"/></svg>
@@ -908,17 +561,15 @@ body{
       </div>
     </div>
  
-    <!-- RIGHT PANEL -->
+    <!-- ══════════════════════════════════════════
+         PANEL DE LOGIN — con mejoras de remember
+    ══════════════════════════════════════════ -->
     <div class="login-panel">
- 
-      <!-- Error message container -->
       <div id="err-msg" class="err-msg hidden"></div>
- 
       <div class="panel-header">
         <div class="panel-title">Ingresa a la plataforma</div>
         <div class="panel-sub">Usa tus credenciales corporativas</div>
       </div>
- 
       <div class="role-tabs" id="role-tabs">
         <div class="role-tab active" id="rt-emp" onclick="selectRole('employee')">
           <span class="rt-icon">👤</span>
@@ -930,36 +581,66 @@ body{
         </div>
       </div>
  
+      <!-- Campo correo: autocomplete="username email" para activar gestor de contraseñas -->
       <div class="field">
-        <label class="field-lbl">Usuario o correo</label>
-        <input type="email" id="f-user" placeholder="usuario@previsora.com.co" autocomplete="username"/>
-      </div>
-      <div class="field">
-        <label class="field-lbl">Contraseña</label>
-        <input type="password" id="f-pass" placeholder="••••••••" autocomplete="current-password"/>
+        <label class="field-lbl" for="f-user">Usuario o correo</label>
+        <input
+          type="email"
+          id="f-user"
+          name="username"
+          placeholder="usuario@previsora.com.co"
+          autocomplete="username email"
+        />
+        <!-- Indicador sutil cuando el correo se carga desde memoria -->
+        <div class="field-hint hidden" id="hint-remember">
+          <svg width="11" height="11" viewBox="0 0 12 12" fill="none">
+            <circle cx="6" cy="6" r="5.5" stroke="#C4D31D" stroke-width="1"/>
+            <path d="M4 6l1.5 1.5L8 4" stroke="#C4D31D" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          Correo recordado
+        </div>
       </div>
  
-      <div class="check-row" onclick="this.querySelector('.check-box').textContent = this.querySelector('.check-box').textContent ? '' : '✓'">
-        <div class="check-box"></div>
-        <div class="check-lbl">Mantenerme conectado</div>
+      <!-- Campo contraseña: autocomplete="current-password" activa oferta de guardado del navegador -->
+      <div class="field">
+        <label class="field-lbl" for="f-pass">Contraseña</label>
+        <input
+          type="password"
+          id="f-pass"
+          name="password"
+          placeholder="••••••••"
+          autocomplete="current-password"
+        />
+      </div>
+ 
+      <!-- Checkbox "Recordar correo" con estado manejado en JS -->
+      <div class="check-row" id="chk-row" onclick="toggleRemember()">
+        <div class="check-box" id="chk-box"></div>
+        <div class="check-lbl">Recordar mi correo</div>
+        <div class="check-sublbl" id="chk-sublbl"></div>
       </div>
  
       <button class="btn-login" onclick="doLogin()">Iniciar sesión</button>
+ 
+      <!-- Nota de seguridad informativa -->
+      <div class="security-note">
+        <svg width="13" height="13" viewBox="0 0 14 14" fill="none">
+          <path d="M7 1L2 3.5V7c0 2.8 2.1 5.4 5 6 2.9-.6 5-3.2 5-6V3.5L7 1z" stroke="#7a6e96" stroke-width="1.1" fill="none"/>
+          <line x1="7" y1="5.5" x2="7" y2="8" stroke="#7a6e96" stroke-width="1.1" stroke-linecap="round"/>
+          <circle cx="7" cy="9.5" r=".5" fill="#7a6e96"/>
+        </svg>
+        <span>Solo se guarda tu correo en este dispositivo. La contraseña puede quedar en el gestor seguro de tu navegador si lo autorizas.</span>
+      </div>
  
       <div class="demo-chips">
         <span class="demo-chip">Selecciona el rol arriba</span>
       </div>
     </div>
- 
   </div>
 </div>
  
-<!-- ══════════════════════════════════════════════════
-     SCREEN: APP
-══════════════════════════════════════════════════ -->
+<!-- APP -->
 <div id="screen-app">
- 
-  <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-left">
       <div class="topbar-logo">
@@ -986,31 +667,34 @@ body{
       <button class="btn-logout" onclick="doLogout()">Salir</button>
     </div>
   </div>
- 
-  <!-- BODY -->
   <div class="app-body">
     <nav class="sidebar" id="sidebar"></nav>
     <main class="main-area" id="main"></main>
   </div>
- 
 </div>
  
-<!-- ══ QUIZ MODAL ════════════════════════════════════ -->
+<!-- QUIZ MODAL -->
 <div class="modal-bd" id="modal-quiz">
-  <div class="modal-box">
+  <div class="modal-box quiz-modal-box">
     <div class="modal-hd">
       <div class="modal-title" id="quiz-modal-title">Evaluación</div>
       <button class="modal-close" onclick="closeModal('modal-quiz')">✕</button>
     </div>
-    <div id="quiz-body"></div>
-    <div class="modal-footer">
-      <button class="btn btn-ghost btn-sm" onclick="closeModal('modal-quiz')">Cerrar</button>
-      <button class="btn btn-primary btn-sm" onclick="submitQuiz()">Verificar respuesta</button>
+    <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-prog-fill" style="width:0%"></div></div>
+    <div class="quiz-meta-row">
+      <span class="quiz-counter" id="quiz-counter">Pregunta 1 de 10</span>
+      <span class="quiz-timer-badge" id="quiz-timer">⏱ 60:00</span>
+      <span class="quiz-score-live" id="quiz-score-live">✓ 0 correctas</span>
+    </div>
+    <div class="quiz-scroll" id="quiz-body"></div>
+    <div class="modal-footer" id="quiz-footer">
+      <button class="btn btn-ghost btn-sm" onclick="closeModal('modal-quiz')">Salir</button>
+      <button class="btn btn-primary btn-sm" id="quiz-next-btn" onclick="handleQuizAction()">Verificar respuesta</button>
     </div>
   </div>
 </div>
  
-<!-- ══ ADD EMPLOYEE MODAL ════════════════════════════ -->
+<!-- ADD EMPLOYEE MODAL -->
 <div class="modal-bd" id="modal-add-emp">
   <div class="modal-box">
     <div class="modal-hd">
@@ -1044,7 +728,7 @@ body{
   </div>
 </div>
  
-<!-- ══ MOD DETAIL MODAL ══════════════════════════════ -->
+<!-- MOD DETAIL MODAL -->
 <div class="modal-bd" id="modal-mod">
   <div class="modal-box" style="width:560px">
     <div class="modal-hd">
@@ -1061,190 +745,176 @@ body{
  
 <div id="notif"></div>
  
-<!-- ══════════════════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════════════════ -->
 <script>
-/* ─── USUARIOS REGISTRADOS ────────────────────────────────────────────
-   Cada usuario tiene: email, password, role ('employee' | 'admin'),
-   name (nombre completo para mostrar en pantalla) y cargo (subtítulo).
-──────────────────────────────────────────────────────────────────────── */
-const USERS = [
-  {
-    email:    'manuel.moreno@previsora.com.co',
-    password: 'Colombia2024*',
-    role:     'employee',
-    name:     'Manuel Moreno',
-    cargo:    'Asistente Administrativo'
-  },
-  {
-    email:    'admin@previsora.com.co',
-    password: 'Admin2026#',
-    role:     'admin',
-    name:     'Carlos Medina',
-    cargo:    'Administrador RRHH'
+/* ═══════════════════════════════════════════════
+   REMEMBER EMAIL — Almacenamiento local seguro
+   Solo guarda el correo (nunca la contraseña).
+   La contraseña queda a cargo del gestor del
+   navegador gracias a autocomplete="current-password"
+═══════════════════════════════════════════════ */
+ 
+const LS_EMAIL_KEY = 'previsora_remember_email';
+const LS_ROLE_KEY  = 'previsora_remember_role';
+ 
+let rememberChecked = false; // estado del checkbox
+ 
+/** Marca / desmarca el checkbox visualmente */
+function setCheckbox(val) {
+  rememberChecked = val;
+  const box  = document.getElementById('chk-box');
+  const subl = document.getElementById('chk-sublbl');
+  if (val) {
+    box.classList.add('checked');
+    box.textContent = '✓';
+    subl.textContent = 'activo';
+  } else {
+    box.classList.remove('checked');
+    box.textContent = '';
+    subl.textContent = '';
   }
+}
+ 
+/** Toggle al hacer clic en la fila del checkbox */
+function toggleRemember() {
+  setCheckbox(!rememberChecked);
+  // Si el usuario desactiva "recordar", borramos inmediatamente
+  if (!rememberChecked) {
+    try { localStorage.removeItem(LS_EMAIL_KEY); } catch(e) {}
+  }
+}
+ 
+/** Guarda o elimina el correo según el estado del checkbox */
+function saveRemember(email) {
+  try {
+    if (rememberChecked && email) {
+      localStorage.setItem(LS_EMAIL_KEY, email);
+      localStorage.setItem(LS_ROLE_KEY,  selectedRole);
+    } else {
+      localStorage.removeItem(LS_EMAIL_KEY);
+      localStorage.removeItem(LS_ROLE_KEY);
+    }
+  } catch(e) {
+    // localStorage no disponible (modo privado muy restrictivo) — ignorar silenciosamente
+  }
+}
+ 
+/** Carga el correo guardado al abrir la página */
+function loadRemember() {
+  try {
+    const email = localStorage.getItem(LS_EMAIL_KEY);
+    const role  = localStorage.getItem(LS_ROLE_KEY);
+    if (email) {
+      document.getElementById('f-user').value = email;
+      document.getElementById('hint-remember').classList.remove('hidden');
+      setCheckbox(true);
+      if (role) selectRole(role);
+      // Poner foco en contraseña para agilizar el acceso
+      setTimeout(() => document.getElementById('f-pass').focus(), 80);
+    }
+  } catch(e) {}
+}
+ 
+/* ─── USUARIOS ─────────────────────────── */
+const USERS = [
+  { email:'manuel.moreno@previsora.com.co', password:'Colombia2024*', role:'employee', name:'Manuel Moreno', cargo:'Asistente Administrativo' },
+  { email:'admin@previsora.com.co',         password:'Admin2026#',    role:'admin',    name:'Carlos Medina',  cargo:'Administrador RRHH' }
 ];
  
-/* ─── STATE ───────────────────────────────────────────────────────── */
-let ROLE         = 'employee';
-let selectedRole = 'employee';
-let currentUser  = null;   // se asigna tras login exitoso
+/* ─── STATE ──────────────────────────── */
+let ROLE = 'employee', selectedRole = 'employee', currentUser = null;
  
-/* ─── HELPERS ────────────────────────────────────────────────────── */
+/* ── Quiz multi-question state ──────── */
+let quizState = {
+  moduleIdx: null,
+  questions: [],
+  current: 0,
+  selected: null,
+  answered: false,
+  correct: 0,
+  wrong: 0,
+  timerInterval: null,
+  timeLeft: 3600
+};
  
-/**
- * Genera las iniciales a partir del nombre completo.
- * Toma la primera letra de cada palabra (máx. 2 iniciales).
- * Ejemplo: "Manuel Moreno" → "MM"
- */
-function getInitials(fullName) {
-  return fullName
-    .trim()
-    .split(/\s+/)
-    .map(w => w[0].toUpperCase())
-    .slice(0, 2)
-    .join('');
-}
+/* ─── HELPERS ────────────────────────── */
+function getInitials(n){ return n.trim().split(/\s+/).map(w=>w[0].toUpperCase()).slice(0,2).join(''); }
+function setLoginError(msg){ const el=document.getElementById('err-msg'); if(msg){el.textContent=msg;el.classList.remove('hidden');}else{el.textContent='';el.classList.add('hidden');} }
+function setFieldError(el,v){ el.classList.toggle('input-error',v); }
  
-/** Muestra u oculta el mensaje de error de login con el texto indicado. */
-function setLoginError(msg) {
-  const el = document.getElementById('err-msg');
-  if (msg) {
-    el.textContent = msg;
-    el.classList.remove('hidden');
-  } else {
-    el.textContent = '';
-    el.classList.add('hidden');
-  }
-}
- 
-/** Aplica o quita el estilo de error en un campo <input>. */
-function setFieldError(inputEl, hasError) {
-  if (hasError) {
-    inputEl.classList.add('input-error');
-  } else {
-    inputEl.classList.remove('input-error');
-  }
-}
- 
-/* ─── ROLE SELECTOR ──────────────────────────────────────────────── */
-function selectRole(r) {
-  selectedRole = r;
-  document.getElementById('rt-emp').classList.toggle('active', r === 'employee');
-  document.getElementById('rt-adm').classList.toggle('active', r === 'admin');
-  // Limpiar errores al cambiar de rol
+/* ─── ROLE SELECT ────────────────────── */
+function selectRole(r){
+  selectedRole=r;
+  document.getElementById('rt-emp').classList.toggle('active',r==='employee');
+  document.getElementById('rt-adm').classList.toggle('active',r==='admin');
   setLoginError('');
-  setFieldError(document.getElementById('f-user'), false);
-  setFieldError(document.getElementById('f-pass'), false);
+  setFieldError(document.getElementById('f-user'),false);
+  setFieldError(document.getElementById('f-pass'),false);
 }
  
-/* ─── AUTH ───────────────────────────────────────────────────────── */
-function doLogin() {
-  const emailInput = document.getElementById('f-user');
-  const passInput  = document.getElementById('f-pass');
-  const email      = emailInput.value.trim();
-  const password   = passInput.value;
+/* ─── AUTH ───────────────────────────── */
+function doLogin(){
+  const ei=document.getElementById('f-user'), pi=document.getElementById('f-pass');
+  const email=ei.value.trim(), password=pi.value;
+  setLoginError(''); setFieldError(ei,false); setFieldError(pi,false);
+  if(!email&&!password){ setLoginError('Por favor ingresa tu correo y contraseña.'); setFieldError(ei,true); setFieldError(pi,true); return; }
+  if(!email){ setLoginError('El correo es obligatorio.'); setFieldError(ei,true); return; }
+  if(!password){ setLoginError('La contraseña es obligatoria.'); setFieldError(pi,true); return; }
+  const u=USERS.find(u=>u.email.toLowerCase()===email.toLowerCase()&&u.password===password);
+  if(!u){ setLoginError('Usuario y/o contraseña incorrectos.'); setFieldError(ei,true); setFieldError(pi,true); return; }
+  if(u.role!==selectedRole){ setLoginError(selectedRole==='admin'?'Este usuario no tiene permisos de administrador.':'Este usuario es administrador. Selecciona el rol correcto.'); return; }
  
-  // Limpiar errores previos
+  // ── Guardar correo ANTES de limpiar el campo ──
+  saveRemember(email);
+ 
+  currentUser=u; ROLE=u.role;
+  const initials=getInitials(u.name), avClass=ROLE==='admin'?'av-adm':'av-emp';
+  document.getElementById('hdr-name').textContent=u.name;
+  document.getElementById('hdr-role').textContent=u.cargo;
+  const av=document.getElementById('hdr-av'); av.textContent=initials; av.className='user-av '+avClass;
+ 
+  // Limpiamos solo la contraseña del DOM; el correo puede quedar si "recordar" está activo
+  pi.value='';
   setLoginError('');
-  setFieldError(emailInput, false);
-  setFieldError(passInput, false);
- 
-  // ── Validación 1: campos vacíos ──────────────────────────────────
-  if (!email && !password) {
-    setLoginError('Por favor ingresa tu correo y contraseña.');
-    setFieldError(emailInput, true);
-    setFieldError(passInput, true);
-    return;
-  }
-  if (!email) {
-    setLoginError('El correo es obligatorio.');
-    setFieldError(emailInput, true);
-    return;
-  }
-  if (!password) {
-    setLoginError('La contraseña es obligatoria.');
-    setFieldError(passInput, true);
-    return;
-  }
- 
-  // ── Validación 2: credenciales estrictas ─────────────────────────
-  // La comparación de email es case-insensitive; la contraseña es sensible a mayúsculas.
-  const matchedUser = USERS.find(
-    u => u.email.toLowerCase() === email.toLowerCase() && u.password === password
-  );
- 
-  if (!matchedUser) {
-    setLoginError('Usuario y/o contraseña incorrectos.');
-    setFieldError(emailInput, true);
-    setFieldError(passInput, true);
-    return;
-  }
- 
-  // ── Validación 3: el rol seleccionado debe coincidir ─────────────
-  if (matchedUser.role !== selectedRole) {
-    setLoginError(
-      selectedRole === 'admin'
-        ? 'Este usuario no tiene permisos de administrador.'
-        : 'Este usuario es administrador. Selecciona el rol correcto.'
-    );
-    return;
-  }
- 
-  // ── Login exitoso ────────────────────────────────────────────────
-  currentUser = matchedUser;
-  ROLE        = matchedUser.role;
- 
-  // Generar iniciales dinámicamente desde el nombre completo
-  const initials  = getInitials(matchedUser.name);
-  const avClass   = ROLE === 'admin' ? 'av-adm' : 'av-emp';
- 
-  // Actualizar cabecera de la app
-  document.getElementById('hdr-name').textContent = matchedUser.name;
-  document.getElementById('hdr-role').textContent = matchedUser.cargo;
-  const av = document.getElementById('hdr-av');
-  av.textContent = initials;
-  av.className   = 'user-av ' + avClass;
- 
-  // Limpiar campos y ocultar pantalla de login
-  emailInput.value = '';
-  passInput.value  = '';
-  setLoginError('');
- 
-  document.getElementById('screen-login').style.display = 'none';
-  const app = document.getElementById('screen-app');
-  app.style.display = 'flex';
- 
-  renderSidebar();
-  navTo(ROLE === 'admin' ? 'admin-home' : 'emp-home');
+  document.getElementById('screen-login').style.display='none';
+  const app=document.getElementById('screen-app'); app.style.display='flex';
+  renderSidebar(); navTo(ROLE==='admin'?'admin-home':'emp-home');
 }
  
-function doLogout() {
-  currentUser = null;
-  document.getElementById('screen-login').style.display = 'flex';
-  document.getElementById('screen-app').style.display   = 'none';
-  // Limpiar cualquier error residual
+function doLogout(){
+  currentUser=null; stopQuizTimer();
+  document.getElementById('screen-login').style.display='flex';
+  document.getElementById('screen-app').style.display='none';
   setLoginError('');
+  document.getElementById('f-pass').value='';
   document.getElementById('f-user').classList.remove('input-error');
   document.getElementById('f-pass').classList.remove('input-error');
+  // Al salir restauramos el correo guardado en el campo si "recordar" está activo
+  if (rememberChecked) {
+    loadRemember();
+  } else {
+    document.getElementById('f-user').value='';
+    document.getElementById('hint-remember').classList.add('hidden');
+  }
 }
  
-/* Permitir login con la tecla Enter desde los campos */
-document.addEventListener('DOMContentLoaded', () => {
-  ['f-user', 'f-pass'].forEach(id => {
-    document.getElementById(id).addEventListener('keydown', e => {
-      if (e.key === 'Enter') doLogin();
-    });
+document.addEventListener('DOMContentLoaded',()=>{
+  // Cargar correo guardado al iniciar
+  loadRemember();
+ 
+  // Ocultar el hint cuando el usuario edita manualmente el campo
+  document.getElementById('f-user').addEventListener('input', () => {
+    document.getElementById('hint-remember').classList.add('hidden');
   });
+ 
+  ['f-user','f-pass'].forEach(id=>document.getElementById(id).addEventListener('keydown',e=>{ if(e.key==='Enter') doLogin(); }));
 });
  
-/* ─── SIDEBAR ─────────────────────────────────── */
-function renderSidebar() {
-  const sb = document.getElementById('sidebar');
-  const pending = STEPS.filter(s=>!s.done).length;
-  if (ROLE === 'employee') {
-    sb.innerHTML = `
+/* ─── SIDEBAR ────────────────────────── */
+function renderSidebar(){
+  const sb=document.getElementById('sidebar');
+  const pending=STEPS.filter(s=>!s.done).length;
+  if(ROLE==='employee'){
+    sb.innerHTML=`
       <div class="sb-section">Mi Inducción 2026</div>
       <div class="nav-item active" data-p="emp-home" onclick="nav(this,'emp-home')"><span class="nav-icon">🏠</span>Inicio</div>
       <div class="nav-item" data-p="emp-steps" onclick="nav(this,'emp-steps')"><span class="nav-icon">✅</span>Mis pasos${pending>0?`<span class="nav-badge">${pending}</span>`:''}</div>
@@ -1254,7 +924,7 @@ function renderSidebar() {
       <div class="nav-item" onclick="notify('📧 Correo: rrhh@previsora.com.co')"><span class="nav-icon">💬</span>Contactar RRHH</div>
       <div class="nav-item" onclick="notify('🔧 Mesa de ayuda TI: ext. 200')"><span class="nav-icon">🔧</span>Soporte TI</div>`;
   } else {
-    sb.innerHTML = `
+    sb.innerHTML=`
       <div class="sb-section">Administración</div>
       <div class="nav-item active" data-p="admin-home" onclick="nav(this,'admin-home')"><span class="nav-icon">📊</span>Dashboard</div>
       <div class="nav-item" data-p="admin-emp" onclick="nav(this,'admin-emp')"><span class="nav-icon">👥</span>Colaboradores</div>
@@ -1265,34 +935,17 @@ function renderSidebar() {
       <div class="nav-item" onclick="notify('⬇️ Exportando datos CSV...')"><span class="nav-icon">⬇️</span>Exportar datos</div>`;
   }
 }
- 
-function nav(el, page) {
-  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
-  el.classList.add('active');
-  navTo(page);
+function nav(el,page){ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); navTo(page); }
+function navTo(page){
+  const titles={'emp-home':'Inicio','emp-steps':'Mis pasos','emp-modules':'Módulos','emp-docs':'Documentos','admin-home':'Dashboard','admin-emp':'Colaboradores','admin-modules':'Módulos','admin-docs':'Documentos'};
+  document.getElementById('topbar-page').textContent=titles[page]||page;
+  const main=document.getElementById('main'); main.innerHTML='';
+  const d=document.createElement('div'); d.className='fade-in'; d.style.height='100%';
+  d.innerHTML=PAGES[page](); main.appendChild(d);
 }
+function charSVG(id,w=80,h=105){ return `<svg width="${w}" height="${h}" viewBox="0 0 120 220"><use href="#${id}"/></svg>`; }
  
-function navTo(page) {
-  const titles = {
-    'emp-home':'Inicio','emp-steps':'Mis pasos','emp-modules':'Módulos','emp-docs':'Documentos',
-    'admin-home':'Dashboard','admin-emp':'Colaboradores','admin-modules':'Módulos','admin-docs':'Documentos'
-  };
-  document.getElementById('topbar-page').textContent = titles[page] || page;
-  const main = document.getElementById('main');
-  main.innerHTML = '';
-  const d = document.createElement('div');
-  d.className = 'fade-in';
-  d.style.height = '100%';
-  d.innerHTML = PAGES[page]();
-  main.appendChild(d);
-}
- 
-/* ─── SVG CHARACTER HELPER ──────────────────── */
-function charSVG(id, w=80, h=105) {
-  return `<svg width="${w}" height="${h}" viewBox="0 0 120 220"><use href="#${id}"/></svg>`;
-}
- 
-/* ─── DATA ────────────────────────────────────────────────────────── */
+/* ─── DATA ───────────────────────────── */
 let STEPS = [
   { title:'Reunión con RRHH', desc:'Entrega de documentos originales, firma de contrato y afiliaciones a seguridad social. Preséntate en el piso 4, oficina 402.', area:'RRHH · Piso 4, Of. 402', done:true },
   { title:'Configuración de cuentas', desc:'TI habilitará tu correo @previsora.com.co, acceso al sistema de pólizas, VPN y aplicaciones internas.', area:'TI · Piso 2, Soporte', done:true },
@@ -1301,42 +954,133 @@ let STEPS = [
   { title:'Evaluación y certificación', desc:'Cuestionario final con nota mínima 80%. Al aprobar recibirás tu certificado digital Previsora 2026.', area:'Online · OnboardIQ', done:false },
 ];
  
+/* ═══════════════════════════════════════════════════
+   BANCO DE PREGUNTAS — 10 preguntas por módulo
+═══════════════════════════════════════════════════ */
 let MODULES = [
   {
     id:0, icon:'🏢', title:'CONFIABILIDAD', subtitle:'Excelencia, Historia y Estructura',
     status:'done', pct:100, dur:'60 min', topics:4, char:'c-asist',
     desc:'Conoce la historia, misión, visión y estructura organizacional de Previsora Seguros.',
-    sections:[
-      {title:'CONFIABILIDAD',items:['1.1 Excelencia Previsora','1.2 Nuestra Historia','1.3 Estructura Organizacional','1.4 Evaluación - 10 preguntas, 60 min']},
-    ],
-    quiz:{ q:'¿Cuál es el lema oficial de Previsora Seguros?', opts:['Protegemos lo que más quieres','No prometemos, aseguramos','Seguros para toda la vida','Confianza y cobertura'], ans:1, min:80 }
+    sections:[{title:'CONFIABILIDAD',items:['1.1 Excelencia Previsora','1.2 Nuestra Historia','1.3 Estructura Organizacional','1.4 Evaluación — 10 preguntas, 60 min']}],
+    quiz:{
+      min:80,
+      questions:[
+        { q:'¿Cuál es el lema oficial de Previsora Seguros?',
+          opts:['Protegemos lo que más quieres','No prometemos, aseguramos','Seguros para toda la vida','Confianza y cobertura'], ans:1 },
+        { q:'¿En qué año fue fundada Previsora Seguros?',
+          opts:['1948','1964','1972','1985'], ans:1 },
+        { q:'¿Cuál es la misión principal de Previsora Seguros?',
+          opts:['Maximizar utilidades para accionistas','Ofrecer soluciones de seguro con excelencia, confiabilidad y compromiso social','Ser el banco más grande de Colombia','Proveer servicios de salud en todo el país'], ans:1 },
+        { q:'¿A qué entidad está vinculada institucionalmente Previsora Seguros?',
+          opts:['Banco de la República','Ministerio de Hacienda y Crédito Público','Ministerio de Salud','DIAN'], ans:1 },
+        { q:'¿Cuál de los siguientes valores NO hace parte del código de ética de Previsora?',
+          opts:['Integridad','Transparencia','Competitividad desleal','Responsabilidad'], ans:2 },
+        { q:'¿Qué organismo regula y vigila a Previsora Seguros en Colombia?',
+          opts:['Superintendencia Financiera de Colombia','Contraloría General de la República','DIAN','Supersociedades'], ans:0 },
+        { q:'¿Cuál es la visión de Previsora Seguros hacia 2030?',
+          opts:['Fusionarse con un banco privado','Ser reconocida como la aseguradora de mayor confianza y excelencia en Colombia','Expandirse a 10 países de América Latina','Eliminar el seguro SOAT del portafolio'], ans:1 },
+        { q:'¿Qué tipo de seguros es el producto insignia de Previsora Seguros?',
+          opts:['Seguros de vida y capitalización','Seguros de automóviles y SOAT','Seguros de crédito hipotecario','Reaseguros internacionales'], ans:1 },
+        { q:'¿Cuántos niveles tiene la estructura organizacional de Previsora Seguros?',
+          opts:['2 niveles (Presidencia y colaboradores)','3 niveles (Junta directiva, Presidencia y Gerencias)','5 niveles incluyendo subgerencias y coordinaciones','No tiene estructura formal'], ans:2 },
+        { q:'¿Qué significa "excelencia Previsora" en el contexto de la inducción?',
+          opts:['Obtener las mayores utilidades del sector','Ser el número uno en ventas de pólizas','Compromiso con calidad, servicio y mejora continua en cada proceso','Trabajar más horas que la competencia'], ans:2 }
+      ]
+    }
   },
   {
     id:1, icon:'🤝', title:'ALIANZA QUE TRASCIENDEN', subtitle:'Clientes y relaciones clave',
     status:'progress', pct:45, dur:'90 min', topics:13, char:'c-coord',
     desc:'Aprende sobre nuestras alianzas estratégicas, cómo relacionarnos con clientes y socios clave.',
-    sections:[
-      {title:'ALIANZA QUE TRASCIENDEN',items:['2.1 Nuestros clientes','2.2 Aliados estratégicos','2.3 Protocolo de atención','2.4 Evaluación - 13 preguntas, 60 min']},
-    ],
-    quiz:{ q:'¿Cuál es el tiempo máximo de respuesta a una queja de cliente?', opts:['24 horas hábiles','48 horas hábiles','72 horas hábiles','5 días hábiles'], ans:2, min:80 }
+    sections:[{title:'ALIANZA QUE TRASCIENDEN',items:['2.1 Nuestros clientes','2.2 Aliados estratégicos','2.3 Protocolo de atención','2.4 Evaluación — 13 preguntas, 60 min']}],
+    quiz:{
+      min:80,
+      questions:[
+        { q:'¿Cuál es el tiempo máximo de respuesta a una queja de cliente según protocolo?',
+          opts:['24 horas hábiles','48 horas hábiles','72 horas hábiles','5 días hábiles'], ans:2 },
+        { q:'¿Qué canal se usa para gestionar peticiones, quejas y recursos (PQR) de clientes?',
+          opts:['WhatsApp personal del asesor','Sistema oficial de PQR de Previsora','Redes sociales del empleado','Correo personal del gerente'], ans:1 },
+        { q:'¿Cuál es la primera acción al recibir una queja formal de un cliente?',
+          opts:['Ignorarla si parece sin fundamento','Registrarla en el sistema, acusar recibo y asignar responsable','Escalarla directamente a la presidencia','Responder verbalmente sin dejar constancia'], ans:1 },
+        { q:'¿Qué es un "aliado estratégico" para Previsora Seguros?',
+          opts:['Un competidor que comparte clientes','Organización o entidad con la que se desarrollan proyectos de valor compartido','Un proveedor que solo entrega insumos','Un cliente frecuente con descuentos especiales'], ans:1 },
+        { q:'¿Cuál de estos NO es un principio del protocolo de atención al cliente de Previsora?',
+          opts:['Escucha activa','Empatía y respeto','Promesas sin respaldo','Soluciones efectivas y oportunas'], ans:2 },
+        { q:'¿Qué herramienta digital usa Previsora para la gestión de relación con clientes (CRM)?',
+          opts:['Solo Excel y correo electrónico','Sistema integrado de gestión de pólizas y clientes','WhatsApp Business de la empresa','Formularios físicos en papel'], ans:1 },
+        { q:'¿Cómo se clasifica un cliente "estratégico" en Previsora Seguros?',
+          opts:['Por el número de quejas que presenta','Por el volumen de pólizas activas y antigüedad','Por el cargo que tiene en su empresa','Por vivir en Bogotá'], ans:1 },
+        { q:'¿Qué debe hacerse antes de cerrar un caso de servicio al cliente?',
+          opts:['Esperar que el cliente llame de nuevo','Verificar que el cliente confirme satisfacción con la solución','Archivar sin notificación','Derivarlo a otro departamento'], ans:1 },
+        { q:'¿Cuál es el canal oficial para comunicados a aliados estratégicos?',
+          opts:['Redes sociales informales','Correo corporativo y plataforma de comunicaciones oficiales','Mensajes de texto personales','Reuniones improvisadas sin acta'], ans:1 },
+        { q:'¿Qué indicador mide la satisfacción del cliente en Previsora?',
+          opts:['Número de pólizas vendidas','NPS (Net Promoter Score) y encuestas de servicio','Solo las quejas formales recibidas','El tiempo de permanencia en sede'], ans:1 }
+      ]
+    }
   },
   {
     id:2, icon:'🌱', title:'SOSTENIBILIDAD Y RESPONSABILIDAD', subtitle:'ESG y cultura corporativa',
     status:'pending', pct:0, dur:'75 min', topics:13, char:'c-insp',
     desc:'Marco de sostenibilidad, código de ética, reglamento interno y responsabilidad social empresarial.',
-    sections:[
-      {title:'SOSTENIBILIDAD',items:['3.1 Código de ética','3.2 Reglamento interno','3.3 Política ambiental','3.4 Evaluación - 13 preguntas, 60 min']},
-    ],
-    quiz:{ q:'¿Qué normativa regula el tratamiento de datos personales en Colombia?', opts:['Decreto 410 de 1971','Ley 1581 de 2012 - HABEAS DATA','Ley 100 de 1993','Resolución 8430'], ans:1, min:80 }
+    sections:[{title:'SOSTENIBILIDAD',items:['3.1 Código de ética','3.2 Reglamento interno','3.3 Política ambiental','3.4 Evaluación — 13 preguntas, 60 min']}],
+    quiz:{
+      min:80,
+      questions:[
+        { q:'¿Qué normativa regula el tratamiento de datos personales en Colombia?',
+          opts:['Decreto 410 de 1971','Ley 1581 de 2012 — HABEAS DATA','Ley 100 de 1993','Resolución 8430 de 1993'], ans:1 },
+        { q:'¿Cuál es la definición de "conflicto de interés" en el código de ética de Previsora?',
+          opts:['Cuando dos clientes solicitan la misma póliza','Situación donde el interés personal puede influir indebidamente en decisiones laborales','Desacuerdo entre dos colegas del mismo área','Cuando un proveedor aumenta sus precios'], ans:1 },
+        { q:'¿Qué debo hacer si identifico un posible acto de corrupción dentro de Previsora?',
+          opts:['Ignorarlo si no me afecta directamente','Reportarlo de inmediato al canal ético o a mi líder','Comentarlo en redes sociales','Esperar a que otro lo reporte'], ans:1 },
+        { q:'¿Qué entiende Previsora por "responsabilidad social empresarial" (RSE)?',
+          opts:['Solo hacer donaciones a fundaciones','Integrar voluntariamente preocupaciones sociales y ambientales en operaciones y relaciones','Pagar impuestos correctamente','Dar descuentos a empleados en pólizas'], ans:1 },
+        { q:'¿Cuál de los siguientes comportamientos viola el reglamento interno de trabajo?',
+          opts:['Llegar 5 minutos antes de la hora de entrada','Usar los recursos de la empresa para asuntos personales sin autorización','Solicitar permisos con anticipación','Participar en capacitaciones voluntarias'], ans:1 },
+        { q:'¿Qué significa "ESG" en el contexto de sostenibilidad corporativa?',
+          opts:['Economía, Seguridad y Gobierno','Ambiental, Social y Gobernanza (Environmental, Social, Governance)','Eficiencia, Servicio y Gestión','Estrategia, Sinergias y Globalización'], ans:1 },
+        { q:'¿Cuántos días hábiles tiene un titular de datos para solicitar corrección o supresión de su información según la ley HABEAS DATA?',
+          opts:['5 días hábiles','10 días hábiles','15 días hábiles','30 días hábiles'], ans:1 },
+        { q:'¿Cuál es la política de Previsora frente al uso de plásticos de un solo uso en sus instalaciones?',
+          opts:['Usarlos libremente sin restricción','Reducción progresiva y sustitución por alternativas sostenibles','Solo en áreas de cocina','Prohibirlos exclusivamente en pisos de atención al cliente'], ans:1 },
+        { q:'¿Qué es el "canal ético" en Previsora Seguros?',
+          opts:['Una línea para quejas de clientes externos','Mecanismo confidencial para reportar conductas contrarias al código de ética','El chat de WhatsApp del equipo de RRHH','Una red social interna'], ans:1 },
+        { q:'¿Cuál documento establece las normas de convivencia y deberes del trabajador en Previsora?',
+          opts:['El contrato de trabajo individual','El Reglamento Interno de Trabajo','La política de calidad ISO','El manual del sistema de pólizas'], ans:1 }
+      ]
+    }
   },
   {
     id:3, icon:'⚡', title:'ESPECIALIZACIÓN E INNOVACIÓN', subtitle:'Procesos y herramientas',
     status:'locked', pct:0, dur:'90 min', topics:13, char:'c-cond',
     desc:'Procesos específicos de tu cargo, herramientas digitales, sistema de pólizas y flujos de trabajo.',
-    sections:[
-      {title:'ESPECIALIZACIÓN',items:['4.1 Tu cargo y responsabilidades','4.2 Sistema de gestión de pólizas','4.3 Flujos de trabajo','4.4 Evaluación final - 13 preguntas']},
-    ],
-    quiz:{ q:'¿Cuál es el canal correcto para reportar una incidencia técnica urgente?', opts:['WhatsApp del jefe','Mesa de ayuda TI: ext. 200','Email a todo el equipo','Esperar al lunes'], ans:1, min:80 }
+    sections:[{title:'ESPECIALIZACIÓN',items:['4.1 Tu cargo y responsabilidades','4.2 Sistema de gestión de pólizas','4.3 Flujos de trabajo','4.4 Evaluación final — 13 preguntas']}],
+    quiz:{
+      min:80,
+      questions:[
+        { q:'¿Cuál es el canal correcto para reportar una incidencia técnica urgente?',
+          opts:['WhatsApp del jefe','Mesa de ayuda TI: ext. 200','Email a todo el equipo','Esperar al lunes'], ans:1 },
+        { q:'¿Qué tipo de póliza cubre obligatoriamente a todos los vehículos en Colombia?',
+          opts:['Póliza todo riesgo','SOAT (Seguro Obligatorio de Accidentes de Tránsito)','Póliza de responsabilidad civil','Seguro de carga'], ans:1 },
+        { q:'¿Cuál es el plazo máximo para registrar una novedad de siniestro en el sistema de pólizas?',
+          opts:['24 horas','3 días hábiles','5 días hábiles','30 días calendario'], ans:2 },
+        { q:'¿Qué herramienta se usa para la firma digital de documentos en Previsora?',
+          opts:['Escáner de documentos físicos','Plataforma oficial de firma electrónica certificada','WhatsApp con foto del documento firmado','Correo informal sin certificado'], ans:1 },
+        { q:'¿Cuál es el primer paso del flujo de emisión de una póliza nueva?',
+          opts:['Cobrar la prima al cliente','Verificar identidad del solicitante y condiciones de asegurabilidad','Enviar la póliza por correo sin revisión','Registrar el siniestro'], ans:1 },
+        { q:'¿Qué significa "vigencia de póliza" en el contexto de seguros?',
+          opts:['El precio total de la cobertura','Período de tiempo durante el cual la póliza tiene cobertura activa','El número de siniestros permitidos','El nombre del agente asignado'], ans:1 },
+        { q:'¿Cómo se denomina el proceso de renovación automática de una póliza al vencer su plazo?',
+          opts:['Endoso','Renovación tácita o automática','Cancelación y reemisión','Reajuste tarifario'], ans:1 },
+        { q:'¿Qué es un "endoso" en terminología de seguros?',
+          opts:['El pago parcial de una prima','Modificación o adición a las condiciones de una póliza existente','El cierre definitivo de una póliza','Un recibo de caja'], ans:1 },
+        { q:'¿Cuánto tiempo tiene el asegurado para notificar un siniestro de automóvil a Previsora?',
+          opts:['72 horas desde el evento','7 días calendario','30 días hábiles','No hay plazo establecido'], ans:0 },
+        { q:'¿Qué plataforma interna usa Previsora para la gestión documental y colaboración entre equipos?',
+          opts:['Solo correo electrónico','Intranet corporativa integrada con herramientas de gestión de pólizas','Google Drive público','USB y memorias físicas'], ans:1 }
+      ]
+    }
   },
 ];
  
@@ -1360,20 +1104,173 @@ let DOCS = [
   {type:'pdf',label:'PDF',title:'Guía SOAT y seguros obligatorios',size:'660 KB'},
 ];
  
-let quizAnswered  = null;
-let activeQuizIdx = null;
+/* ─── QUIZ ENGINE ─────────────────────── */
+function stopQuizTimer(){
+  if(quizState.timerInterval){ clearInterval(quizState.timerInterval); quizState.timerInterval=null; }
+}
  
-/* ─── PAGES ───────────────────────────────────── */
+function startQuizTimer(){
+  stopQuizTimer();
+  quizState.timeLeft = 3600;
+  quizState.timerInterval = setInterval(()=>{
+    quizState.timeLeft--;
+    const m=Math.floor(quizState.timeLeft/60), s=quizState.timeLeft%60;
+    const el=document.getElementById('quiz-timer');
+    if(!el){ stopQuizTimer(); return; }
+    const str=`⏱ ${String(m).padStart(2,'0')}:${String(s).padStart(2,'0')}`;
+    el.textContent=str;
+    if(quizState.timeLeft<=300) el.classList.add('warning');
+    if(quizState.timeLeft<=0){ stopQuizTimer(); finishQuiz(true); }
+  },1000);
+}
+ 
+function openQuiz(i){
+  const m=MODULES[i];
+  quizState = { moduleIdx:i, questions:[...m.quiz.questions], current:0, selected:null, answered:false, correct:0, wrong:0, timerInterval:null, timeLeft:3600 };
+  document.getElementById('quiz-modal-title').textContent = m.icon+' Evaluación — '+m.title;
+  renderQuizQuestion();
+  openModal('modal-quiz');
+  startQuizTimer();
+}
+ 
+function renderQuizQuestion(){
+  const qs=quizState;
+  const total=qs.questions.length;
+  const q=qs.questions[qs.current];
+  const pct=Math.round((qs.current/total)*100);
+  const letters=['A','B','C','D'];
+ 
+  document.getElementById('quiz-prog-fill').style.width=pct+'%';
+  document.getElementById('quiz-counter').textContent=`Pregunta ${qs.current+1} de ${total}`;
+  document.getElementById('quiz-score-live').textContent=`✓ ${qs.correct} correcta${qs.correct!==1?'s':''}`;
+ 
+  const nextBtn=document.getElementById('quiz-next-btn');
+  nextBtn.textContent='Verificar respuesta';
+  nextBtn.onclick=handleQuizAction;
+ 
+  document.getElementById('quiz-body').innerHTML=`
+    <div class="quiz-q">${q.q}</div>
+    <div class="quiz-opts" id="quiz-opts">
+      ${q.opts.map((o,j)=>`<div class="quiz-opt" onclick="selectQuizOpt(this,${j})" data-i="${j}">
+        <div class="qo-letter">${letters[j]}</div>${o}
+      </div>`).join('')}
+    </div>
+    <div class="quiz-feedback qf-ok" id="qf-ok">✅ ¡Correcto! Muy bien.</div>
+    <div class="quiz-feedback qf-fail" id="qf-fail" id="qf-fail-msg"></div>
+    <div class="quiz-final" id="quiz-final"></div>`;
+}
+ 
+function selectQuizOpt(el, idx){
+  if(quizState.answered) return;
+  document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('qo-sel'));
+  el.classList.add('qo-sel');
+  quizState.selected=idx;
+}
+ 
+function handleQuizAction(){
+  if(!quizState.answered){
+    if(quizState.selected===null){ notify('⚠️ Selecciona una respuesta'); return; }
+    quizState.answered=true;
+    const q=quizState.questions[quizState.current];
+    const opts=document.querySelectorAll('.quiz-opt');
+    opts.forEach(o=>o.classList.add('qo-locked'));
+    opts[q.ans].classList.add('qo-correct');
+    if(quizState.selected===q.ans){
+      quizState.correct++;
+      document.getElementById('qf-ok').classList.add('visible');
+    } else {
+      quizState.wrong++;
+      opts[quizState.selected].classList.add('qo-wrong');
+      const letters=['A','B','C','D'];
+      document.getElementById('qf-fail').innerHTML=`✗ Respuesta incorrecta. La correcta era <strong>${letters[q.ans]}. ${q.opts[q.ans]}</strong>`;
+      document.getElementById('qf-fail').classList.add('visible');
+    }
+    document.getElementById('quiz-score-live').textContent=`✓ ${quizState.correct} correcta${quizState.correct!==1?'s':''}`;
+    const total=quizState.questions.length;
+    const nextBtn=document.getElementById('quiz-next-btn');
+    if(quizState.current < total-1){
+      nextBtn.textContent='Siguiente →';
+    } else {
+      nextBtn.textContent='Ver resultados →';
+    }
+  } else {
+    quizState.current++;
+    quizState.answered=false;
+    quizState.selected=null;
+    if(quizState.current < quizState.questions.length){
+      renderQuizQuestion();
+    } else {
+      finishQuiz(false);
+    }
+  }
+}
+ 
+function finishQuiz(timeout){
+  stopQuizTimer();
+  const qs=quizState;
+  const total=qs.questions.length;
+  const score=Math.round((qs.correct/total)*100);
+  const m=MODULES[qs.moduleIdx];
+  const passed=score>=m.quiz.min;
+ 
+  const pf=document.getElementById('quiz-prog-fill');
+  if(pf) pf.style.width='100%';
+ 
+  const nextBtn=document.getElementById('quiz-next-btn');
+  if(nextBtn) nextBtn.style.display='none';
+ 
+  const scoreColor=passed?'var(--lime)':score>=60?'var(--orchid)':'var(--hot-pink)';
+  const r=44, circ=2*Math.PI*r, off=circ-(score/100)*circ;
+ 
+  const resultHtml=`
+    <div class="quiz-final visible">
+      <div class="qf-score-ring">
+        <svg width="110" height="110" style="transform:rotate(-90deg)">
+          <circle fill="none" stroke="rgba(255,255,255,.07)" stroke-width="8" cx="55" cy="55" r="${r}"/>
+          <circle fill="none" stroke="${scoreColor}" stroke-width="8" stroke-linecap="round"
+            cx="55" cy="55" r="${r}"
+            stroke-dasharray="${circ.toFixed(1)}" stroke-dashoffset="${off.toFixed(1)}"
+            style="transition:stroke-dashoffset .8s ease"/>
+        </svg>
+        <div class="qf-score-label" style="position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center">
+          <span style="font-size:28px;font-weight:800;color:${scoreColor};line-height:1">${score}%</span>
+          <span style="font-size:10px;color:var(--txt3);font-weight:500">${passed?'APROBADO':'REPROBADO'}</span>
+        </div>
+      </div>
+      <div class="qf-result-title" style="color:${passed?'var(--lime)':'var(--hot-pink)'};margin-top:1rem">
+        ${timeout?'⏰ Tiempo agotado':''}${passed&&!timeout?'🎉 ¡Módulo aprobado!':''}${!passed&&!timeout?'📖 Sigue estudiando':''}
+      </div>
+      <div class="qf-result-sub">${passed?`¡Excelente! Superaste la nota mínima de ${m.quiz.min}%.${qs.moduleIdx<MODULES.length-1?' El siguiente módulo ha sido desbloqueado.':''}`:`Obtuviste ${score}%. Necesitas al menos ${m.quiz.min}% para aprobar. Revisa el contenido e intenta de nuevo.`}</div>
+      <div class="qf-breakdown">
+        <div class="qf-break-item"><div class="qf-break-val" style="color:var(--lime)">${qs.correct}</div><div class="qf-break-lbl">Correctas</div></div>
+        <div class="qf-break-item"><div class="qf-break-val" style="color:var(--hot-pink)">${qs.wrong}</div><div class="qf-break-lbl">Incorrectas</div></div>
+        <div class="qf-break-item"><div class="qf-break-val" style="color:var(--orchid)">${total}</div><div class="qf-break-lbl">Total</div></div>
+      </div>
+      ${passed?`<button class="btn btn-lime" style="margin:0 auto;display:flex" onclick="closeModal('modal-quiz')">Continuar →</button>`
+               :`<button class="btn btn-ghost" style="margin:0 auto;display:flex" onclick="closeModal('modal-quiz')">Cerrar y repasar</button>`}
+    </div>`;
+ 
+  document.getElementById('quiz-body').innerHTML=resultHtml;
+  document.getElementById('quiz-counter').textContent='Resultados finales';
+ 
+  if(passed && m.status!=='done'){
+    m.status='done'; m.pct=100;
+    const next=MODULES[qs.moduleIdx+1];
+    if(next&&next.status==='locked') next.status='pending';
+    setTimeout(()=>{ notify('🎉 ¡Módulo aprobado! Siguiente módulo desbloqueado'); navTo('emp-modules'); }, 3500);
+  }
+}
+ 
+/* ─── PAGES ──────────────────────────── */
 const PAGES = {
  
-/* ════ EMPLOYEE HOME ══════════════════════════════ */
 'emp-home': () => {
-  const done     = STEPS.filter(s=>s.done).length;
-  const modsDone = MODULES.filter(m=>m.status==='done').length;
-  const pct      = Math.round(done/5*50 + modsDone/MODULES.length*50);
+  const done=STEPS.filter(s=>s.done).length;
+  const modsDone=MODULES.filter(m=>m.status==='done').length;
+  const pct=Math.round(done/5*50+modsDone/MODULES.length*50);
   const r=32, circ=2*Math.PI*r, off=circ-(pct/100)*circ;
-  const next     = STEPS.find(s=>!s.done);
-  const userName = currentUser ? currentUser.name : 'Colaborador';
+  const next=STEPS.find(s=>!s.done);
+  const userName=currentUser?currentUser.name:'Colaborador';
   return `
   <div class="welcome-banner">
     <div class="wb-glow"></div><div class="wb-glow2"></div>
@@ -1382,7 +1279,7 @@ const PAGES = {
       <div class="wb-title">¡Bienvenid, ${userName}! 👋</div>
       <div class="wb-sub">Ingresa y obtén tu certificado de incorporación</div>
       <div style="margin-top:14px;display:flex;gap:8px;align-items:center">
-        <span class="badge b-lime">${currentUser ? currentUser.cargo : ''}</span>
+        <span class="badge b-lime">${currentUser?currentUser.cargo:''}</span>
         <span class="badge b-purple">Día 2 de onboarding</span>
       </div>
     </div>
@@ -1390,34 +1287,27 @@ const PAGES = {
       <div style="text-align:center">
         <svg width="80" height="80" class="ring-svg">
           <circle class="ring-bg" cx="40" cy="40" r="${r}"/>
-          <circle class="ring-fg" cx="40" cy="40" r="${r}"
-            stroke-dasharray="${circ}" stroke-dashoffset="${off}"
-            style="stroke:${pct>=80?'var(--lime)':'var(--purple-mid)'}"/>
+          <circle class="ring-fg" cx="40" cy="40" r="${r}" stroke-dasharray="${circ}" stroke-dashoffset="${off}" style="stroke:${pct>=80?'var(--lime)':'var(--purple-mid)'}"/>
         </svg>
         <div style="font-size:11px;color:var(--txt3);margin-top:4px;font-weight:600">${pct}% completado</div>
       </div>
-      <div class="wb-day">
-        <div class="wb-num">Día ${done+1}</div>
-        <div class="wb-lbl">de inducción</div>
-      </div>
+      <div class="wb-day"><div class="wb-num">Día ${done+1}</div><div class="wb-lbl">de inducción</div></div>
     </div>
   </div>
- 
   <div class="stats-row stats-4">
     <div class="stat-card sc-purple"><div class="stat-lbl">Progreso total</div><div class="stat-val sv-purple">${pct}%</div><div style="margin-top:8px"><div class="prog-wrap h6"><div class="prog-fill pf-purple" style="width:${pct}%"></div></div></div></div>
     <div class="stat-card sc-lime"><div class="stat-lbl">Pasos completados</div><div class="stat-val sv-lime">${done}<span style="font-size:16px;color:var(--txt3)">/ 5</span></div><div class="stat-sub">${5-done} pendiente${5-done!==1?'s':''}</div></div>
     <div class="stat-card sc-pink"><div class="stat-lbl">Módulos aprobados</div><div class="stat-val sv-pink">${modsDone}<span style="font-size:16px;color:var(--txt3)">/ ${MODULES.length}</span></div><div class="stat-sub">1 en progreso</div></div>
     <div class="stat-card"><div class="stat-lbl">Días restantes</div><div class="stat-val" style="color:var(--orchid)">3</div><div class="stat-sub">Para completar fase 1</div></div>
   </div>
- 
   <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-bottom:16px">
     <div>
       <div style="font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Próximo paso</div>
-      ${next ? `<div class="step-card active-step" style="cursor:pointer" onclick="nav(document.querySelector('[data-p=emp-steps]'),'emp-steps')">
+      ${next?`<div class="step-card active-step" style="cursor:pointer" onclick="nav(document.querySelector('[data-p=emp-steps]'),'emp-steps')">
         <div class="sn sn-active">→</div>
         <div class="sb"><div class="st-title">${next.title}</div><div class="st-desc">${next.desc}</div><div class="st-tag">📍 ${next.area}</div>
         <div style="margin-top:10px"><button class="btn btn-primary btn-sm">Ir a mis pasos →</button></div></div>
-      </div>` : '<div class="card" style="text-align:center;padding:2rem;color:var(--lime);font-weight:700">🎉 ¡Todos los pasos completados!</div>'}
+      </div>`:'<div class="card" style="text-align:center;padding:2rem;color:var(--lime);font-weight:700">🎉 ¡Todos los pasos completados!</div>'}
     </div>
     <div>
       <div style="font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Actividad reciente</div>
@@ -1429,39 +1319,33 @@ const PAGES = {
       </div>
     </div>
   </div>
- 
   <div style="font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px">Cargos disponibles en Previsora</div>
   <div class="team-cards">
     <div class="team-card" onclick="notify('Asistente Administrativa — Admon Mercadeo')">
       <div style="background:rgba(89,34,114,.15);border-radius:var(--r);padding:8px;display:inline-block">${charSVG('c-asist',76,100)}</div>
-      <div class="team-card-role">Asistente</div>
-      <div class="team-card-name">Administrativa</div>
+      <div class="team-card-role">Asistente</div><div class="team-card-name">Administrativa</div>
       <div style="margin-top:6px"><span class="badge b-lime" style="font-size:9px">1 módulo</span></div>
     </div>
     <div class="team-card" onclick="notify('Coordinador Administrativo — Admon Mercadeo')">
       <div style="background:rgba(155,76,186,.15);border-radius:var(--r);padding:8px;display:inline-block">${charSVG('c-coord',76,100)}</div>
-      <div class="team-card-role">Coordinador</div>
-      <div class="team-card-name">Administrativo</div>
+      <div class="team-card-role">Coordinador</div><div class="team-card-name">Administrativo</div>
       <div style="margin-top:6px"><span class="badge b-purple" style="font-size:9px">7 módulos</span></div>
     </div>
     <div class="team-card" onclick="notify('Auxiliar de Inspección — Analista Procedimientos')">
       <div style="background:rgba(196,211,29,.10);border-radius:var(--r);padding:8px;display:inline-block">${charSVG('c-insp',76,100)}</div>
-      <div class="team-card-role">Auxiliar de</div>
-      <div class="team-card-name">Inspección</div>
+      <div class="team-card-role">Auxiliar de</div><div class="team-card-name">Inspección</div>
       <div style="margin-top:6px"><span class="badge b-green" style="font-size:9px">1 módulo</span></div>
     </div>
     <div class="team-card" onclick="notify('Conductor — Analista Procedimientos')">
       <div style="background:rgba(251,2,141,.08);border-radius:var(--r);padding:8px;display:inline-block">${charSVG('c-cond',76,100)}</div>
-      <div class="team-card-role">Conductor</div>
-      <div class="team-card-name">Logística</div>
+      <div class="team-card-role">Conductor</div><div class="team-card-name">Logística</div>
       <div style="margin-top:6px"><span class="badge b-pink" style="font-size:9px">1 módulo</span></div>
     </div>
   </div>`;
 },
  
-/* ════ EMPLOYEE STEPS ═════════════════════════════ */
 'emp-steps': () => {
-  const done = STEPS.filter(s=>s.done).length;
+  const done=STEPS.filter(s=>s.done).length;
   return `
   <div class="page-hd">
     <div class="page-title">Mis pasos de incorporación</div>
@@ -1476,42 +1360,38 @@ const PAGES = {
   </div>
   <div class="step-list">
     ${STEPS.map((s,i)=>{
-      const cls = s.done ? 'done-step' : i===done ? 'active-step' : '';
-      const nc  = s.done ? 'sn-done'  : i===done ? 'sn-active'  : 'sn-idle';
-      const nl  = s.done ? '✓' : i+1;
+      const cls=s.done?'done-step':i===done?'active-step':'';
+      const nc=s.done?'sn-done':i===done?'sn-active':'sn-idle';
+      const nl=s.done?'✓':i+1;
       return `<div class="step-card ${cls}">
         <div class="sn ${nc}">${nl}</div>
         <div class="sb">
           <div class="st-title">${s.title}</div>
           <div class="st-desc">${s.desc}</div>
           <div class="st-tag">📍 ${s.area}</div>
-          ${!s.done ? `<div style="margin-top:10px"><button class="btn btn-primary btn-sm" onclick="markStep(${i})">Marcar como completado ✓</button></div>` : '<div style="font-size:11px;color:var(--lime);margin-top:8px;font-weight:600">✓ Completado</div>'}
+          ${!s.done?`<div style="margin-top:10px"><button class="btn btn-primary btn-sm" onclick="markStep(${i})">Marcar como completado ✓</button></div>`:'<div style="font-size:11px;color:var(--lime);margin-top:8px;font-weight:600">✓ Completado</div>'}
         </div>
       </div>`;
     }).join('')}
   </div>`;
 },
  
-/* ════ EMPLOYEE MODULES ═══════════════════════════ */
 'emp-modules': () => `
   <div class="page-hd">
     <div class="page-title">Módulos de capacitación</div>
     <div class="page-sub">Completa en orden para desbloquear el siguiente nivel — nota mínima de aprobación: 80%</div>
   </div>
   <div class="mods-grid">
-    ${MODULES.map((m,i) => {
-      const locked = m.status === 'locked';
-      const clss   = locked ? 'locked-card' : m.status==='done' ? 'done-card' : '';
-      const bClss  = m.status==='done'?'b-lime':m.status==='progress'?'b-purple':locked?'b-gray':'b-pink';
-      const bLbl   = m.status==='done'?'✓ Completado':m.status==='progress'?'En progreso':locked?'🔒 Bloqueado':'Pendiente';
+    ${MODULES.map((m,i)=>{
+      const locked=m.status==='locked';
+      const clss=locked?'locked-card':m.status==='done'?'done-card':'';
+      const bClss=m.status==='done'?'b-lime':m.status==='progress'?'b-purple':locked?'b-gray':'b-pink';
+      const bLbl=m.status==='done'?'✓ Completado':m.status==='progress'?'En progreso':locked?'🔒 Bloqueado':'Pendiente';
       return `<div class="mod-card ${clss}" onclick="${locked?`notify('Completa los módulos anteriores para desbloquear')`:`openModDetail(${i})`}">
         <div class="mod-head">
           <div style="display:flex;align-items:flex-start;gap:10px">
             <div class="mod-icon-bg">${m.icon}</div>
-            <div>
-              <div class="mod-title">${m.title}</div>
-              <div style="font-size:11px;color:var(--txt3)">${m.subtitle}</div>
-            </div>
+            <div><div class="mod-title">${m.title}</div><div style="font-size:11px;color:var(--txt3)">${m.subtitle}</div></div>
           </div>
           <span class="badge ${bClss}">${bLbl}</span>
         </div>
@@ -1520,7 +1400,7 @@ const PAGES = {
         <div class="mod-meta">
           <div style="display:flex;align-items:center;gap:12px">
             ${charSVG(m.char,36,48)}
-            <span class="mod-dur">⏱ ${m.dur} · ${m.topics} temas</span>
+            <span class="mod-dur">⏱ ${m.dur} · ${m.quiz.questions.length} preguntas</span>
           </div>
           <span class="mod-pct-txt">${m.pct}%</span>
         </div>
@@ -1528,7 +1408,6 @@ const PAGES = {
     }).join('')}
   </div>`,
  
-/* ════ EMPLOYEE DOCS ══════════════════════════════ */
 'emp-docs': () => `
   <div class="page-hd">
     <div class="page-title">Biblioteca de documentos</div>
@@ -1542,24 +1421,21 @@ const PAGES = {
     </div>`).join('')}
   </div>`,
  
-/* ════ ADMIN HOME ═════════════════════════════════ */
 'admin-home': () => {
-  const avg       = Math.round(EMPLOYEES.reduce((a,e)=>a+e.pct,0)/EMPLOYEES.length);
-  const completed = EMPLOYEES.filter(e=>e.pct===100).length;
-  const atRisk    = EMPLOYEES.filter(e=>e.pct<30).length;
+  const avg=Math.round(EMPLOYEES.reduce((a,e)=>a+e.pct,0)/EMPLOYEES.length);
+  const completed=EMPLOYEES.filter(e=>e.pct===100).length;
+  const atRisk=EMPLOYEES.filter(e=>e.pct<30).length;
   return `
   <div class="page-hd">
     <div class="page-title">Dashboard de Inducción 2026</div>
     <div class="page-sub">Previsora Seguros — ${new Date().toLocaleDateString('es-CO',{weekday:'long',year:'numeric',month:'long',day:'numeric'})}</div>
   </div>
- 
   <div class="stats-row stats-4">
     <div class="stat-card sc-purple"><div class="stat-lbl">Colaboradores activos</div><div class="stat-val sv-purple">${EMPLOYEES.length}</div><div class="stat-sub">en proceso de inducción</div></div>
     <div class="stat-card sc-lime"><div class="stat-lbl">Promedio de avance</div><div class="stat-val sv-lime">${avg}%</div><div style="margin-top:8px"><div class="prog-wrap h6"><div class="prog-fill pf-lime" style="width:${avg}%"></div></div></div></div>
     <div class="stat-card sc-green"><div class="stat-lbl">Certificados emitidos</div><div class="stat-val sv-green">${completed}</div><div class="stat-sub">aprobaron con 80%+</div></div>
     <div class="stat-card sc-pink"><div class="stat-lbl">Requieren apoyo</div><div class="stat-val sv-pink">${atRisk}</div><div class="stat-sub">avance menor al 30%</div></div>
   </div>
- 
   <div style="display:grid;grid-template-columns:1fr 300px;gap:16px">
     <div>
       <div style="font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Estado de colaboradores</div>
@@ -1585,11 +1461,10 @@ const PAGES = {
         </table>
       </div>
     </div>
- 
     <div>
       <div style="font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px">Cargos en formación</div>
       <div class="card" style="padding:.75rem 1rem">
-        ${[{ch:'c-asist',r:'Asistente Admin.',n:'1 módulo'},{ch:'c-coord',r:'Coordinador Admin.',n:'7 módulos'},{ch:'c-insp',r:'Aux. Inspección',n:'1 módulo'},{ch:'c-cond',r:'Conductor',n:'1 módulo'}].map(c=>`
+        ${[{ch:'c-asist',r:'Asistente Admin.',n:'10 preguntas'},{ch:'c-coord',r:'Coordinador Admin.',n:'10 preguntas'},{ch:'c-insp',r:'Aux. Inspección',n:'10 preguntas'},{ch:'c-cond',r:'Conductor',n:'10 preguntas'}].map(c=>`
         <div style="display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.04)">
           ${charSVG(c.ch,38,50)}
           <div><div style="font-size:12px;font-weight:600;color:#fff">${c.r}</div><div style="font-size:10px;color:var(--txt3)">${c.n}</div></div>
@@ -1599,7 +1474,6 @@ const PAGES = {
   </div>`;
 },
  
-/* ════ ADMIN EMPLOYEES ════════════════════════════ */
 'admin-emp': () => `
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem">
     <div class="page-hd" style="margin:0"><div class="page-title">Gestión de colaboradores</div><div class="page-sub">Administra el proceso de incorporación de cada persona</div></div>
@@ -1631,7 +1505,6 @@ const PAGES = {
     </table>
   </div>`,
  
-/* ════ ADMIN MODULES ══════════════════════════════ */
 'admin-modules': () => `
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem">
     <div class="page-hd" style="margin:0"><div class="page-title">Gestión de módulos</div><div class="page-sub">Crea, edita y asigna módulos de capacitación por cargo</div></div>
@@ -1644,7 +1517,7 @@ const PAGES = {
         ${charSVG(m.char,42,56)}
         <div style="flex:1">
           <div style="font-size:14px;font-weight:700;color:#fff;margin-bottom:2px">${m.title}</div>
-          <div style="font-size:11px;color:var(--txt3)">${m.topics} temas · ${m.sections.map(s=>s.items.length).reduce((a,b)=>a+b,0)} lecciones · Nota mínima: ${m.quiz.min}%</div>
+          <div style="font-size:11px;color:var(--txt3)">${m.quiz.questions.length} preguntas · Nota mínima: ${m.quiz.min}% · ${m.dur}</div>
           <div style="margin-top:8px"><div class="prog-wrap h6" style="max-width:220px"><div class="prog-fill pf-purple" style="width:${m.pct}%"></div></div></div>
         </div>
         <span class="badge ${m.status==='done'?'b-lime':m.status==='progress'?'b-purple':m.status==='locked'?'b-gray':'b-pink'}">${m.status==='done'?'✓ Activo':m.status==='progress'?'En uso':m.status==='locked'?'Bloqueado':'Pendiente'}</span>
@@ -1655,7 +1528,6 @@ const PAGES = {
       </div>`).join('')}
   </div>`,
  
-/* ════ ADMIN DOCS ═════════════════════════════════ */
 'admin-docs': () => `
   <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1.75rem">
     <div class="page-hd" style="margin:0"><div class="page-title">Biblioteca de documentos</div><div class="page-sub">Gestiona los recursos disponibles para colaboradores</div></div>
@@ -1672,133 +1544,70 @@ const PAGES = {
       </div>
     </div>`).join('')}
   </div>`,
- 
 };
  
-/* ─── ACTIONS ─────────────────────────────────── */
-function markStep(i) {
-  STEPS[i].done = true;
-  notify('✓ Paso marcado como completado');
-  renderSidebar();
-  navTo('emp-steps');
-  const el = document.querySelector('[data-p="emp-steps"]');
+/* ─── ACTIONS ────────────────────────── */
+function markStep(i){
+  STEPS[i].done=true; notify('✓ Paso marcado como completado'); renderSidebar(); navTo('emp-steps');
+  const el=document.querySelector('[data-p="emp-steps"]');
   if(el){ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); }
 }
  
-function openModDetail(i) {
-  const m = MODULES[i];
-  document.getElementById('mod-modal-title').textContent = m.icon + ' ' + m.title;
-  document.getElementById('mod-modal-body').innerHTML = `
+function openModDetail(i){
+  const m=MODULES[i];
+  document.getElementById('mod-modal-title').textContent=m.icon+' '+m.title;
+  document.getElementById('mod-modal-body').innerHTML=`
     <div style="display:flex;gap:16px;margin-bottom:1.25rem;align-items:flex-start">
       <div style="flex:1">
         <div style="font-size:12px;color:var(--txt2);line-height:1.7;margin-bottom:1rem">${m.desc}</div>
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem">
           <div class="card-flat" style="text-align:center"><div style="font-size:20px;font-weight:800;color:var(--lime)">${m.pct}%</div><div style="font-size:10px;color:var(--txt3)">Completado</div></div>
-          <div class="card-flat" style="text-align:center"><div style="font-size:20px;font-weight:800;color:#fff">${m.topics}</div><div style="font-size:10px;color:var(--txt3)">Temas</div></div>
+          <div class="card-flat" style="text-align:center"><div style="font-size:20px;font-weight:800;color:#fff">${m.quiz.questions.length}</div><div style="font-size:10px;color:var(--txt3)">Preguntas</div></div>
           <div class="card-flat" style="text-align:center"><div style="font-size:13px;font-weight:700;color:var(--orchid)">${m.dur}</div><div style="font-size:10px;color:var(--txt3)">Duración</div></div>
         </div>
         ${m.pct>0?`<div class="course-success">✓ Progreso guardado — ${m.pct}% completado</div>`:''}
         <div style="font-size:10px;font-weight:700;color:var(--txt3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px">Contenido del módulo</div>
         ${m.sections.map(sec=>`
           <div style="margin-bottom:8px">
-            <div class="cn-section">${sec.title} · ${sec.items.length}</div>
-            ${sec.items.map((it,j)=>`<div class="cn-item ${m.pct===100?'cn-done':''}">
+            <div class="cn-section">${sec.title}</div>
+            ${sec.items.map(it=>`<div class="cn-item ${m.pct===100?'cn-done':''}">
               <span class="cn-icon">${m.pct===100?'✓':'📄'}</span>
               <span>${it}</span>
-              ${it.includes('Evaluación')?`<span class="cn-count">10 Preguntas · ${m.quiz.min}% mín</span>`:''}
             </div>`).join('')}
           </div>`).join('')}
+        <div style="margin-top:12px;padding:10px 14px;background:rgba(196,211,29,.06);border:1px solid rgba(196,211,29,.15);border-radius:var(--r);font-size:11px;color:var(--txt3)">
+          🎯 Evaluación: <strong style="color:var(--lime)">${m.quiz.questions.length} preguntas</strong> · Nota mínima: <strong style="color:var(--lime)">${m.quiz.min}%</strong> · Tiempo: <strong style="color:var(--lime)">60 min</strong>
+        </div>
       </div>
       <div style="text-align:center;flex-shrink:0">${charSVG(m.char,90,120)}</div>
     </div>`;
-  document.getElementById('mod-cta-btn').onclick = () => { closeModal('modal-mod'); openQuiz(i); };
+  document.getElementById('mod-cta-btn').onclick=()=>{ closeModal('modal-mod'); openQuiz(i); };
   openModal('modal-mod');
 }
  
-function openQuiz(i) {
-  activeQuizIdx = i;
-  quizAnswered  = null;
-  const m = MODULES[i];
-  const q = m.quiz;
-  document.getElementById('quiz-modal-title').textContent = '🎯 Evaluación — ' + m.title;
-  document.getElementById('quiz-body').innerHTML = `
-    <div class="quiz-info-row">
-      <div class="qi-item"><span class="qi-icon">❓</span>10 Preguntas</div>
-      <div class="qi-item"><span class="qi-icon">⏱</span>60:00 min</div>
-      <div class="qi-item"><span class="qi-icon">📊</span>Nota aprobación: ${q.min}%</div>
-    </div>
-    <div class="quiz-q">${q.q}</div>
-    <div class="quiz-opts" id="quiz-opts">
-      ${q.opts.map((o,j)=>`<div class="quiz-opt" onclick="selOpt(this,${j})" data-i="${j}">
-        <div class="qo-circle"></div>${o}
-      </div>`).join('')}
-    </div>
-    <div class="quiz-result qr-ok" id="qr-ok">✅ ¡Correcto! Módulo completado exitosamente. Nota: 100%</div>
-    <div class="quiz-result qr-fail" id="qr-fail">✗ Respuesta incorrecta. Revisa el módulo e intenta de nuevo.</div>`;
-  openModal('modal-quiz');
-}
- 
-function selOpt(el, idx) {
-  if (quizAnswered !== null) return;
-  document.querySelectorAll('.quiz-opt').forEach(o=>o.classList.remove('qo-sel'));
-  el.classList.add('qo-sel');
-  quizAnswered = idx;
-}
- 
-function submitQuiz() {
-  if (quizAnswered === null) { notify('⚠️ Selecciona una respuesta'); return; }
-  const m       = MODULES[activeQuizIdx];
-  const correct = m.quiz.ans;
-  const opts    = document.querySelectorAll('.quiz-opt');
-  opts.forEach(o=>o.classList.add('qo-locked'));
-  opts[correct].classList.add('qo-correct');
-  if (quizAnswered !== correct) {
-    opts[quizAnswered].classList.add('qo-wrong');
-    document.getElementById('qr-fail').style.display = 'block';
-  } else {
-    document.getElementById('qr-ok').style.display = 'block';
-    if (m.status !== 'done') {
-      m.status = 'done'; m.pct = 100;
-      const next = MODULES[activeQuizIdx + 1];
-      if (next && next.status === 'locked') next.status = 'pending';
-    }
-    setTimeout(() => {
-      closeModal('modal-quiz');
-      notify('🎉 ¡Módulo aprobado! Siguiente módulo desbloqueado');
-      navTo('emp-modules');
-      const el = document.querySelector('[data-p="emp-modules"]');
-      if(el){ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); }
-    }, 2000);
-  }
-}
- 
-function saveNewEmp() {
-  const name = document.getElementById('ne-name').value.trim();
-  if (!name) { notify('⚠️ Ingresa el nombre del colaborador'); return; }
-  const initials = getInitials(name);
+function saveNewEmp(){
+  const name=document.getElementById('ne-name').value.trim();
+  if(!name){ notify('⚠️ Ingresa el nombre del colaborador'); return; }
+  const initials=getInitials(name);
   EMPLOYEES.unshift({ name, initials, cargo:document.getElementById('ne-cargo').value, days:0, pct:0, color:'#592272' });
-  closeModal('modal-add-emp');
-  notify(`✓ ${name} agregado al proceso de inducción 2026`);
-  navTo('admin-emp');
-  const el = document.querySelector('[data-p="admin-emp"]');
+  closeModal('modal-add-emp'); notify(`✓ ${name} agregado al proceso de inducción 2026`); navTo('admin-emp');
+  const el=document.querySelector('[data-p="admin-emp"]');
   if(el){ document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active')); el.classList.add('active'); }
 }
  
-/* ─── MODAL UTILS ─────────────────────────────── */
-function openModal(id)  { document.getElementById(id).classList.add('open'); }
-function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-document.addEventListener('click', e => {
-  if (e.target.classList.contains('modal-bd')) e.target.classList.remove('open');
-});
+/* ─── MODAL UTILS ────────────────────── */
+function openModal(id){ document.getElementById(id).classList.add('open'); }
+function closeModal(id){
+  document.getElementById(id).classList.remove('open');
+  if(id==='modal-quiz') stopQuizTimer();
+}
+document.addEventListener('click',e=>{ if(e.target.classList.contains('modal-bd')){ e.target.classList.remove('open'); stopQuizTimer(); } });
  
-/* ─── NOTIFICATIONS ───────────────────────────── */
+/* ─── NOTIFICATIONS ──────────────────── */
 let notifT;
-function notify(msg) {
-  const el = document.getElementById('notif');
-  el.textContent = msg;
-  el.classList.add('show');
-  clearTimeout(notifT);
-  notifT = setTimeout(() => el.classList.remove('show'), 3000);
+function notify(msg){
+  const el=document.getElementById('notif'); el.textContent=msg; el.classList.add('show');
+  clearTimeout(notifT); notifT=setTimeout(()=>el.classList.remove('show'),3000);
 }
 </script>
 </body>
