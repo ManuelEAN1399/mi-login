@@ -817,7 +817,7 @@ function loadRemember() {
 /* ─── USUARIOS ─────────────────────────── */
 const USERS = [
   { email:'manuel.moreno@previsora.com.co', password:'Colombia2024*', role:'employee', name:'Manuel Moreno', cargo:'Asistente Administrativo' },
-  { email:'admin@previsora.com.co',         password:'Admin2026#',    role:'admin',    name:'Carlos Medina',  cargo:'Administrador RRHH' }
+  { email:'admin@previsora.com.co',         password:'Admin2026#',    role:'admin',    name:'Jesica Carvajal',  cargo:'Administrador RRHH' }
 ];
  
 /* ─── STATE ──────────────────────────── */
@@ -989,6 +989,38 @@ let MODULES = [
       ]
     }
   },
+  ,
+  {
+    id:1, icon:'🤝', title:'LIQUIDACION DE VIATICOS', subtitle:'Clientes y relaciones clave',
+    status:'progress', pct:45, dur:'90 min', topics:13, char:'c-coord',
+    desc:'Aprende sobre nuestras alianzas estratégicas, cómo relacionarnos con clientes y socios clave.',
+    sections:[{title:'LIQUIDACION DE VIATICOS',items:['2.1 Nuestros clientes','2.2 Aliados estratégicos','2.3 Protocolo de atención','2.4 Evaluación — 13 preguntas, 60 min']}],
+    quiz:{
+      min:80,
+      questions:[
+        { q:'¿Cuál es el plazo máximo para radicar el formato de liquidación de viáticos después de ejecutar una comisión?',
+  opts:['24 horas hábiles','3 días hábiles','5 días hábiles','15 días calendario'], ans:2 },
+{ q:'¿Qué documento es obligatorio adjuntar para justificar el gasto de alojamiento en una comisión?',
+  opts:['Captura de pantalla de la reserva','Factura o documento equivalente a nombre de Previsora Seguros o del funcionario','Correo de confirmación del hotel','Recibo informal del establecimiento'], ans:1 },
+{ q:'¿Quién debe aprobar la solicitud de viáticos ANTES de iniciar el desplazamiento?',
+  opts:['El propio funcionario que viaja','El jefe inmediato o superior autorizado','El área de contabilidad','Cualquier compañero del equipo'], ans:1 },
+{ q:'¿Qué sucede con los viáticos no ejecutados al finalizar la comisión?',
+  opts:['Se acumulan para la siguiente comisión','Deben reintegrarse a la empresa dentro del plazo establecido','Se pueden usar libremente por el funcionario','No es necesario reportarlos'], ans:1 },
+{ q:'¿Cuál de los siguientes gastos NO es reconocido como viático en Previsora Seguros?',
+  opts:['Tiquetes aéreos en clase económica','Alimentación dentro de los topes establecidos','Bebidas alcohólicas y entretenimiento personal','Transporte terrestre entre ciudades'], ans:2 },
+{ q:'¿Qué tope diario aplica para gastos de alimentación en comisiones nacionales según la política de viáticos?',
+  opts:['El funcionario decide libremente el monto','El establecido en la tabla de viáticos vigente aprobada por la empresa','El valor de la factura sin límite','Solo aplica para viajes al exterior'], ans:1 },
+{ q:'¿Cuál es el tratamiento correcto cuando el valor real del gasto supera el anticipo de viáticos recibido?',
+  opts:['El funcionario asume el excedente sin posibilidad de reembolso','Se radica la liquidación con soportes y se solicita el reembolso de la diferencia','Se ajusta la factura para que cuadre con el anticipo','Se reporta como pérdida sin trámite adicional'], ans:1 },
+{ q:'¿En qué formato o sistema se debe radicar la liquidación de viáticos en Previsora Seguros?',
+  opts:['En un correo informal al jefe','En el formato oficial de liquidación de viáticos aprobado por la empresa','En una hoja de Excel de diseño propio','En el sistema de PQR de clientes'], ans:1 },
+{ q:'¿Qué ocurre si un funcionario no radica la liquidación de viáticos en el plazo estipulado?',
+  opts:['No tiene ninguna consecuencia','Se puede generar descuento por nómina y bloqueo de futuros anticipos','El área de viajes lo liquida automáticamente','Se cancela la comisión retroactivamente'], ans:1 },
+{ q:'¿Cuál es la categoría de transporte autorizada por política para comisiones nacionales en Previsora Seguros?',
+  opts:['Primera clase o ejecutiva sin restricción','Clase económica o la tarifa más eficiente disponible','Transporte particular con reconocimiento ilimitado','Solo transporte terrestre sin excepciones'], ans:1 },
+      ]
+    }
+  },
   {
     id:1, icon:'🤝', title:'ALIANZA QUE TRASCIENDEN', subtitle:'Clientes y relaciones clave',
     status:'progress', pct:45, dur:'90 min', topics:13, char:'c-coord',
@@ -1091,19 +1123,92 @@ let EMPLOYEES = [
   { name:'Diego Torres',     initials:'DT', cargo:'Conductor',                  days:14, pct:100, color:'#61B22F', char:'c-cond'  },
   { name:'Valentina Cruz',   initials:'VC', cargo:'Despachadora',               days:1,  pct:10,  color:'#C4D31D', textC:'#111'  },
 ];
- 
 let DOCS = [
-  {type:'pdf',label:'PDF',title:'Reglamento interno Previsora 2025',size:'2.3 MB'},
-  {type:'pdf',label:'PDF',title:'Manual del agente de seguros',size:'1.8 MB'},
-  {type:'vid',label:'VIDEO',title:'Bienvenidos a Nuestra Familia 2026',size:'12 min'},
-  {type:'pdf',label:'PDF',title:'Política HABEAS DATA — Datos personales',size:'890 KB'},
-  {type:'lnk',label:'ENLACE',title:'Portal de beneficios y nómina',size:'Intranet'},
-  {type:'vid',label:'VIDEO',title:'Capacitación sistema de pólizas',size:'28 min'},
-  {type:'pdf',label:'PDF',title:'Código de ética y buen gobierno',size:'1.1 MB'},
-  {type:'lnk',label:'ENLACE',title:'Superintendencia Financiera Colombia',size:'Externo'},
-  {type:'pdf',label:'PDF',title:'Guía SOAT y seguros obligatorios',size:'660 KB'},
+
+  // =========================
+  // 🎥 VIDEOS DE YOUTUBE
+  // =========================
+  {
+    type:'vid',
+    label:'VIDEO',
+    title:'Bienvenidos a Nuestra Familia 2026',
+    size:'Video YouTube',
+    url:'https://www.youtube.com/watch?v=RWO4y3gm2JU'
+  },
+
+  {
+    type:'vid',
+    label:'VIDEO',
+    title:'Capacitación sistema de pólizas',
+    size:'Video YouTube',
+    url:'https://www.youtube.com/watch?v=zdufAYbqaeY'
+  },
+
+
+  // =========================
+  // 🌐 PORTALES Y ENLACES
+  // =========================
+  {
+    type:'lnk',
+    label:'PORTAL',
+    title:'Portal de beneficios y nómina',
+    size:'Portal institucional',
+    url:'https://previsora.gov.co/web/colaboradores'
+  },
+
+
+  // =========================
+  // DOCUMENTOS Y NORMATIVAS
+  // =========================
+  {
+    type:'pdf',
+    label:'PDF',
+    title:'Reglamento interno Previsora 2026',
+    size:'Documento institucional',
+    url:'https://previsora.gov.co/documents/d/guest/estatutos-previsora-seguros-2025-reformados-1-2'
+  },
+
+  {
+    type:'pdf',
+    label:'PDF',
+    title:'Manual del agente de seguros',
+    size:'Manual institucional',
+    url:'https://previsora.gov.co/politicas-lineamientos-y-manuales'
+  },
+
+{
+    type:'pdf',
+    label:'Video',
+    title:'Liquidacion de viaticos',
+    size:'Manual institucional',
+    url:'https://www.youtube.com/watch?v=68hQiwsA88A&t=6s'
+  },
+
+  {
+    type:'pdf',
+    label:'PDF',
+    title:'Política de Habeas Data',
+    size:'Protección de datos',
+    url:'https://comunicacionesprevisora.wordpress.com/wp-content/uploads/2022/09/proteccion-de-datos-dentro-de-previsora-seguros-copia.pdf'
+  },
+
+  {
+    type:'pdf',
+    label:'PDF',
+    title:'Código de ética y buen gobierno',
+    size:'Documento corporativo',
+    url:'https://previsora.gov.co/documents/d/guest/codigo-de-etica-_2025-12-22-10-12-24-1'
+  },
+
+  {
+    type:'pdf',
+    label:'PDF',
+    title:'Guía SOAT y seguros obligatorios',
+    size:'Guía informativa',
+    url:'https://previsora.gov.co/soat1'
+  }
+
 ];
- 
 /* ─── QUIZ ENGINE ─────────────────────── */
 function stopQuizTimer(){
   if(quizState.timerInterval){ clearInterval(quizState.timerInterval); quizState.timerInterval=null; }
@@ -1156,7 +1261,7 @@ function renderQuizQuestion(){
       </div>`).join('')}
     </div>
     <div class="quiz-feedback qf-ok" id="qf-ok">✅ ¡Correcto! Muy bien.</div>
-    <div class="quiz-feedback qf-fail" id="qf-fail" id="qf-fail-msg"></div>
+    <div class="quiz-feedback qf-fail" id="qf-fail"></div>
     <div class="quiz-final" id="quiz-final"></div>`;
 }
  
@@ -1414,7 +1519,7 @@ const PAGES = {
     <div class="page-sub">Manuales, reglamentos, normativas y recursos para tu cargo en Previsora Seguros</div>
   </div>
   <div class="docs-grid">
-    ${DOCS.map(d=>`<div class="doc-card" onclick="notify('📥 Abriendo: ${d.title}...')">
+    ${DOCS.map((d,i)=>`<div class="doc-card" onclick="openDoc(${i})">
       <div class="doc-type dt-${d.type==='lnk'?'lnk':d.type==='vid'?'vid':'pdf'}">${d.label}</div>
       <div class="doc-title">${d.title}</div>
       <div class="doc-meta">${d.size}</div>
@@ -1534,18 +1639,26 @@ const PAGES = {
     <button class="btn btn-primary" onclick="notify('📤 Abriendo cargador de archivos...')">+ Subir documento</button>
   </div>
   <div class="docs-grid">
-    ${DOCS.map(d=>`<div class="doc-card" style="cursor:default">
+    ${DOCS.map((d,i)=>`<div class="doc-card" style="cursor:default">
       <div class="doc-type dt-${d.type==='lnk'?'lnk':d.type==='vid'?'vid':'pdf'}">${d.label}</div>
       <div class="doc-title">${d.title}</div>
       <div class="doc-meta">${d.size}</div>
       <div style="display:flex;gap:6px;margin-top:10px">
-        <button class="btn btn-ghost btn-xs" onclick="notify('✏️ Editando: ${d.title}')">Editar</button>
-        <button class="btn btn-danger btn-xs" onclick="notify('🗑️ Eliminado: ${d.title}')">Eliminar</button>
+        <button class="btn btn-primary btn-xs" onclick="openDoc(${i})">Abrir</button>
+        <button class="btn btn-ghost btn-xs" onclick="notify('✏️ Editando...')">Editar</button>
+        <button class="btn btn-danger btn-xs" onclick="notify('🗑️ Eliminado...')">Eliminar</button>
       </div>
     </div>`).join('')}
   </div>`,
 };
  
+/* ─── DOC OPENER ────────────────────── */
+function openDoc(i){
+  const d=DOCS[i];
+  if(!d||!d.url){ notify('⚠️ Documento no disponible'); return; }
+  window.open(d.url,'_blank','noopener,noreferrer');
+}
+
 /* ─── ACTIONS ────────────────────────── */
 function markStep(i){
   STEPS[i].done=true; notify('✓ Paso marcado como completado'); renderSidebar(); navTo('emp-steps');
